@@ -1,6 +1,8 @@
 #include <ZR/Sprite/Animation.h>
 #include <iostream>
 #include <fstream>
+#include <tinyxml2.h>
+#include <sstream>
 
 namespace zr
 {
@@ -88,63 +90,52 @@ namespace zr
 	{
 		target.draw(s, states);
 	}
+
 	bool Animation::loadFromFile(std::string filename)
 	{
-        bool bounded;
-        // Gets the pathname up to the file
-        std::string path = filename.substr(0, filename.find('_'));
-        
-        // Gets the name of the file
-        std::string file = filename.substr(filename.find_last_of("/") + 1);
-        if (file.find(".png") == std::string::npos)
-            tImg->loadFromFile(path + "/" + file + ".png");
-        else
-            tImg->loadFromFile(path + "/" + file);
-        std::ifstream in;
-        in.open(path + "/" + file + ".txt");
-        if (!in.fail())
-        {
-            in >> frames;
-            in >> animSize.x;
-            in >> animSize.y;
-            in >> speed;
-            in >> bounded;
-            
-            if(bounded)
-            {
-                for (int i = 0; i <= frames; i++)
-                {
-                    PhysicsObject obj;
-                    std::vector<sf::Vector2f> points;
-                    std::string input;
-                    in >> input; //Skip the first instance of the word polygon
-                    while (input != "end") //Prevents the loop from occurring in the case that the first input is has no polygon
-                    {
-                        in >> input;
-                        do
-                        {
-                            sf::Vector2f value;
-                            value.x = std::stof(input);
-                            in >> value.y;
-                            points.push_back(value);
-                            in >> input;
-                        
-                        
-                        } while (input != "polygon" && input != "end");
-                        obj.addPolygon(points);
-                        points.clear();
-                    }
-                    addAnimationBounds(obj);
-                }
-            }
-            
-        }
-        else
-            return false;
-        in.close();
-        return true;
-    }
-    
+		tinyxml2::XMLDocument doc;
+
+		// Gets the pathname up to the file
+		std::string path = filename.substr(0, filename.find('_'));
+
+		// Gets the name of the file
+		std::string file = filename.substr(filename.find_last_of("/") + 1);
+
+		tImg->loadFromFile(path + "/" + file + ".png");
+		doc.LoadFile((path + "/" + file + ".xml").c_str());
+		frames = std::stoi(doc.FirstChildElement("frames")->GetText());
+		animSize.x = std::stof(doc.FirstChildElement("width")->GetText());
+		animSize.y = std::stof(doc.FirstChildElement("height")->GetText());
+		speed = std::stoi(doc.FirstChildElement("speed")->GetText());
+		tinyxml2::XMLElement *elem = doc.FirstChildElement("collision_data");
+		tinyxml2::XMLElement *e2 = elem->FirstChildElement("frame");
+		while (e2)
+		{
+			tinyxml2::XMLElement *e3 = e2->FirstChildElement("polygon");
+			PhysicsObject obj;
+			std::vector<sf::Vector2f> points;
+			while (e3) //Prevents the loop from occurring in the case that the first input is has no polygon
+			{
+				std::istringstream iss(e3->GetText());
+				std::string input;
+				while (std::getline(iss, input, ' '))
+				{
+					sf::Vector2f value;
+					value.x = std::stof(input);
+					std::getline(iss, input, ' ');
+					value.y = std::stof(input);
+					points.push_back(value);
+				}
+				obj.addPolygon(points);
+				points.clear();
+				e3 = e3->NextSiblingElement("polygon");
+			}
+			addAnimationBounds(obj);
+			e2 = e2->NextSiblingElement("frame");
+		}
+		return true;
+	}
+
     void Animation::resetPolygon()
     {
         currentPolygon = new CollisionObject();

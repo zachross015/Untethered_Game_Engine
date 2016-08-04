@@ -1,0 +1,68 @@
+<frames>4</frames>
+<width>16</width>
+<height>16</height>
+<speed>15</speed>
+<collision_data>
+	<frame>
+		<polygon>0 0 16 16 0 16</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 15 15 0 15</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 14 14 0 14</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 13 13 0 13</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 13 13 0 13</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 12 12 0 12</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 11 11 0 11</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 10 10 0 10</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 9 9 0 9</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 8 8 0 8</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 7 7 0 7</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 6 6 0 6</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 5 5 0 5</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 4 4 0 4</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 3 3 0 3</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 2 2 0 2</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 1 1 0 1</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0</polygon>
+	</frame>
+</collision_data>
+
+
+
+
+
+
+
+
