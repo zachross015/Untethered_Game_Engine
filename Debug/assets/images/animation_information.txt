@@ -1,0 +1,6 @@
+This is the way that .anim files are formatted
+
+In the .txt file is the settings used for the animation that sets up the default values:
+	frames=value
+	animSize={value,value}
+	speed=value;

@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine Items">
+      <UniqueIdentifier>{d6996811-9248-40e7-a84c-e999dff655a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include">
+      <UniqueIdentifier>{bb3262d6-676d-44eb-89a2-ba81847cfe5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src">
+      <UniqueIdentifier>{0eb5f73b-3868-425f-8d66-1f71a6036dc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\ZR">
+      <UniqueIdentifier>{22141511-a566-44d9-84fe-4567e4332318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\ZR\GameResources">
+      <UniqueIdentifier>{9ef71b26-1612-47cc-9f66-9ebeff0e1706}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\ZR\GUI">
+      <UniqueIdentifier>{e622056d-0a4a-4323-8597-d431fae6eee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\ZR\Mutable">
+      <UniqueIdentifier>{c1d1a639-9262-4fd0-b57a-b917d2b1d92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\ZR\Physics">
+      <UniqueIdentifier>{44109718-eac7-472f-846e-c10b89c3b103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\ZR\Sprite">
+      <UniqueIdentifier>{78a9de59-79b8-4970-9176-0a81c37005c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\SFML">
+      <UniqueIdentifier>{a85a421b-38dc-4e8b-af07-f7c9ebcdba2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\SFML\Audio">
+      <UniqueIdentifier>{bf71f47b-5717-42ff-9d81-6727b43b2877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\SFML\Graphics">
+      <UniqueIdentifier>{ce8048ac-43cb-4ed2-888b-0d7d72f1de53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\SFML\Network">
+      <UniqueIdentifier>{dc8636fc-e2fb-4a01-8ae5-868ec0fbe920}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\SFML\System">
+      <UniqueIdentifier>{6715290d-b130-48dd-a6cb-0723321592e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\include\SFML\Window">
+      <UniqueIdentifier>{d1f087fb-74fc-4230-874e-23897c664199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src\ZR">
+      <UniqueIdentifier>{0711c254-058e-4cb5-9718-a98c0b10e16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src\ZR\GameResources">
+      <UniqueIdentifier>{53990d71-3b93-4f00-8f99-09a464cc4451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src\ZR\GUI">
+      <UniqueIdentifier>{dd070df4-934e-4063-ba91-70c9683b619d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src\ZR\Mutable">
+      <UniqueIdentifier>{cd7e1163-8dbf-46d7-85e3-8de1c59953ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src\ZR\Sprite">
+      <UniqueIdentifier>{3ff1c738-d73d-42a4-81f9-59ec5bbe24ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Items\src\ZR\Physics">
+      <UniqueIdentifier>{e7e17ed7-e50e-41fe-b74d-19e9b6261a25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\GameResources\Game.cpp">
+      <Filter>Engine Items\src\ZR\GameResources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\GameResources\ResourceHolder.cpp">
+      <Filter>Engine Items\src\ZR\GameResources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\GameResources\StaticResources.cpp">
+      <Filter>Engine Items\src\ZR\GameResources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Mutable\Clickable.cpp">
+      <Filter>Engine Items\src\ZR\Mutable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Mutable\Drawable.cpp">
+      <Filter>Engine Items\src\ZR\Mutable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Mutable\Hoverable.cpp">
+      <Filter>Engine Items\src\ZR\Mutable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Physics\ComplexPolygon.cpp">
+      <Filter>Engine Items\src\ZR\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Physics\PhysicsVariables.cpp">
+      <Filter>Engine Items\src\ZR\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Sprite\Actor.cpp">
+      <Filter>Engine Items\src\ZR\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Sprite\Animation.cpp">
+      <Filter>Engine Items\src\ZR\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Sprite\Pawn.cpp">
+      <Filter>Engine Items\src\ZR\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\QuadTree.cpp">
+      <Filter>Engine Items\src\ZR</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Scene.cpp">
+      <Filter>Engine Items\src\ZR</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\TestEnvironment.cpp">
+      <Filter>Engine Items\src\ZR</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Physics\CollisionObject.cpp">
+      <Filter>Engine Items\src\ZR\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\Physics\PhysicsObject.cpp">
+      <Filter>Engine Items\src\ZR\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\GUI\GUIOverlay.cpp">
+      <Filter>Engine Items\src\ZR\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\GUI\GUINode.cpp">
+      <Filter>Engine Items\src\ZR\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml2.cpp">
+      <Filter>Engine Items\src\ZR</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZR\GUI\TextNode.cpp">
+      <Filter>Engine Items\src\ZR\GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\ZR\GameResources\Game.h">
+      <Filter>Engine Items\include\ZR\GameResources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GameResources\ResourceHolder.h">
+      <Filter>Engine Items\include\ZR\GameResources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GameResources\Resources.h">
+      <Filter>Engine Items\include\ZR\GameResources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Mutable\Clickable.h">
+      <Filter>Engine Items\include\ZR\Mutable</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Mutable\Drawable.h">
+      <Filter>Engine Items\include\ZR\Mutable</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Mutable\Hoverable.h">
+      <Filter>Engine Items\include\ZR\Mutable</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Physics\ComplexPolygon.h">
+      <Filter>Engine Items\include\ZR\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Physics\PhysicsVariables.h">
+      <Filter>Engine Items\include\ZR\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Physics\Range.h">
+      <Filter>Engine Items\include\ZR\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Sprite\Actor.h">
+      <Filter>Engine Items\include\ZR\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Sprite\Animation.h">
+      <Filter>Engine Items\include\ZR\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Sprite\Pawn.h">
+      <Filter>Engine Items\include\ZR\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Counter.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\FunctionHolder.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GameResources.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Mutable.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Physics.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\QuadTree.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Scene.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Sprite.h">
+      <Filter>Engine Items\include\ZR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\AlResource.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\Export.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\InputSoundFile.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\Listener.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\Music.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\OutputSoundFile.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\Sound.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundBuffer.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundBufferRecorder.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundFileFactory.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundFileReader.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundFileWriter.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundRecorder.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundSource.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio\SoundStream.hpp">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\BlendMode.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\CircleShape.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Color.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\ConvexShape.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Drawable.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Export.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Font.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Glsl.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Glyph.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Image.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\PrimitiveType.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Rect.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\RectangleShape.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\RenderStates.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\RenderTarget.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\RenderTexture.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\RenderWindow.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Shader.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Shape.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Sprite.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Text.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Texture.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Transform.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Transformable.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\Vertex.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\VertexArray.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics\View.hpp">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\Export.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\Ftp.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\Http.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\IpAddress.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\Packet.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\Socket.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\SocketHandle.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\SocketSelector.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\TcpListener.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\TcpSocket.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network\UdpSocket.hpp">
+      <Filter>Engine Items\include\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Context.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\ContextSettings.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Event.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Export.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\GlResource.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Joystick.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Keyboard.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Mouse.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Sensor.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Touch.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\VideoMode.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\Window.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\WindowHandle.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window\WindowStyle.hpp">
+      <Filter>Engine Items\include\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Clock.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Err.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Export.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\FileInputStream.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\InputStream.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Lock.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\MemoryInputStream.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Mutex.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\NativeActivity.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\NonCopyable.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Sleep.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\String.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Thread.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\ThreadLocal.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\ThreadLocalPtr.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Time.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Utf.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Vector2.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System\Vector3.hpp">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Audio.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Config.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Graphics.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Main.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Network.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\OpenGL.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\System.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SFML\Window.hpp">
+      <Filter>Engine Items\include\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Physics\CollisionObject.h">
+      <Filter>Engine Items\include\ZR\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Physics\PhysicsObject.h">
+      <Filter>Engine Items\include\ZR\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GUI\GUINode.h">
+      <Filter>Engine Items\include\ZR\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GUI\GUIOverlay.h">
+      <Filter>Engine Items\include\ZR\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GUI\TextNode.h">
+      <Filter>Engine Items\include\ZR\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\SFML\Audio\SoundFileFactory.inl">
+      <Filter>Engine Items\include\SFML\Audio</Filter>
+    </None>
+    <None Include="include\SFML\Graphics\Glsl.inl">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </None>
+    <None Include="include\SFML\Graphics\Rect.inl">
+      <Filter>Engine Items\include\SFML\Graphics</Filter>
+    </None>
+    <None Include="include\SFML\System\String.inl">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </None>
+    <None Include="include\SFML\System\Thread.inl">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </None>
+    <None Include="include\SFML\System\ThreadLocalPtr.inl">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </None>
+    <None Include="include\SFML\System\Utf.inl">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </None>
+    <None Include="include\SFML\System\Vector2.inl">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </None>
+    <None Include="include\SFML\System\Vector3.inl">
+      <Filter>Engine Items\include\SFML\System</Filter>
+    </None>
+  </ItemGroup>
+</Project>

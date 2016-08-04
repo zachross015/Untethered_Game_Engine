@@ -1,0 +1,4 @@
+Animation Circle_Top assets/images/Circle_Top
+Animation Projectile_Fire assets/images/Projectile_Fire
+Animation X_up assets/images/X_up
+Font default assets/Fonts/8bit.ttf

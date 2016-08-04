@@ -1,0 +1,58 @@
+#include <ZR/GameResources/Resources.h>
+#include <iostream>
+#include <random>
+
+using namespace zr;
+
+void Test()
+{
+	CurrentScene = new Scene();
+	const int MAX = 100;
+	Actor *actors[MAX];
+
+	for (int i = 0; i < MAX; i++)
+	{
+		actors[i] = new Actor();
+		Actor *a = actors[i];
+		float x = rand() % 1600;
+		float y = rand() % 900;
+		a->addAnimation("default", &BoundedAnimations.get("X_up"));
+		a->setCurrentAnimation("default");
+		a->setPosition({ x,y });
+		//a->setScale({ 4,4 });
+
+		CurrentScene->addObject(a);
+	}
+	//actors[0]->addAnimation("other", &BoundedAnimations.get("X_down"));
+	//actors[0]->setCurrentAnimation("other");
+	actors[0]->addCollisionFunction("default",[](PhysicsObject*, PhysicsObject*) {std::cout << "hello" << std::endl; });
+	actors[0]->setScale({ 4,4 });
+	//actors[0]->setMovementType(zr::Movement::ConstVel);
+	actors[10]->setScale({ 6,6 });
+
+	actors[0]->updateFunctions.add([](Drawable *d, sf::Time dT)
+	{
+		if (Actor *a = dynamic_cast<Actor *>(d))
+		{
+
+			sf::Vector2f acceleration = {0,0};
+			float vc = 600;
+			float accelerationAmt = 30.f;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) acceleration.x += vc;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) acceleration.x -= vc;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) acceleration.y += vc;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) acceleration.y -= vc;
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) vc = 400;
+
+			a->setMovementSpeed(acceleration);
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) a->rotate(5);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) a->rotate(-5);
+			
+		}
+	});
+	//CurrentScene->addChildScene(new Scene());
+	//CurrentScene->goToChildScene(0);
+	//CurrentScene->goToParentScene();
+}
