@@ -25,7 +25,6 @@ namespace zr
 			Middle,
 			Bottom
 		};
-<<<<<<< HEAD
 	}
 
 	namespace LineWrap
@@ -42,24 +41,6 @@ namespace zr
 		HorizantalAlign::Type ha;
 		VerticalAlign::Type va;
 		LineWrap::Type lw;
-=======
-	}
-
-	namespace LineWrap
-	{
-		enum Type
-		{
-			WordWrap,
-			CharacterWrap
-		};
-	}
-
-	struct Settings
-	{
-		HorizantalAlign::Type ha;
-		VerticalAlign::Type va;
-		LineWrap::Type lw;
->>>>>>> bb321ad0b06d6f43796b5507de6de175ce3159b4
 	};
 
 	struct Line

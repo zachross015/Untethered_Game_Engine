@@ -10,10 +10,10 @@ void Test()
 	CurrentScene = new Scene();
 	GUIOverlay *gui = new GUIOverlay();
 	TextNode *tn = new TextNode();
-	tn->setText("<style size = '30'>hello </style><style size = '20'>world. </style><style size = '15'>my name is </style><style>zach</style>");
+	tn->setText("<style size = '30'>hello </style><style size = '40'>world. </style><style size = '15'>my name is </style><style>zach</style>");
 	tn->setLineWidth(400.f);
-	tn->setHorizantalAlign(zr::HorizantalAlign::Right);
-	tn->setVerticalAlign(zr::VerticalAlign::Bottom);
+	tn->setHorizantalAlign(zr::HorizantalAlign::Middle);
+	tn->setVerticalAlign(zr::VerticalAlign::Middle);
 	gui->addNode(tn);
 	CurrentScene->GUI = gui;
 }

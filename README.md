@@ -12,7 +12,6 @@ Game engine under the development of Zach Ross. This project is almost completel
 - [ ] Implement Gravity options
 
 ### GUI
-<<<<<<< HEAD
 - [X] Add XML Parsing to the engine
 - [X] Create node system for GUI Elements
 - [ ] In-depth text and NodeElement formatting via XML tags
