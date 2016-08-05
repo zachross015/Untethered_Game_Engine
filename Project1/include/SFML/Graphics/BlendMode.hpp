@@ -68,9 +68,8 @@ struct SFML_GRAPHICS_API BlendMode
     ////////////////////////////////////////////////////////
     enum Equation
     {
-        Add,            ///< Pixel = Src * SrcFactor + Dst * DstFactor
-        Subtract,       ///< Pixel = Src * SrcFactor - Dst * DstFactor
-        ReverseSubtract ///< Pixel = Dst * DstFactor - Src * SrcFactor
+        Add,     ///< Pixel = Src * SrcFactor + Dst * DstFactor
+        Subtract ///< Pixel = Src * SrcFactor - Dst * DstFactor
     };
 
     ////////////////////////////////////////////////////////////
@@ -202,7 +201,7 @@ SFML_GRAPHICS_API extern const BlendMode BlendNone;     ///< Overwrite dest with
 /// \code
 /// sf::BlendMode alphaBlending          = sf::BlendAlpha;
 /// sf::BlendMode additiveBlending       = sf::BlendAdd;
-/// sf::BlendMode multiplicativeBlending = sf::BlendMultiply;
+/// sf::BlendMode multiplicativeBlending = sf::BlendMultipy;
 /// sf::BlendMode noBlending             = sf::BlendNone;
 /// \endcode
 ///

@@ -1,8 +1,19 @@
-﻿Build started 8/4/2016 12:54:17 PM.
+﻿Build started 8/5/2016 12:19:46 AM.
      1>Project "C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Project1\Project1.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\\Project1\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\ZR\TestEnvironment.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\\Project1\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\ZR\GUI\TextNode.cpp src\ZR\TestEnvironment.cpp
+         TextNode.cpp
+     1>src\ZR\GUI\TextNode.cpp(55): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(62): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(69): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(110): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(131): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(137): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(141): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(169): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(173): warning C4018: '<': signed/unsigned mismatch
+     1>src\ZR\GUI\TextNode.cpp(183): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
          TestEnvironment.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Release\Untethered_Engine.exe" /NOLOGO /LIBPATH:"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\\Project1\lib" "sfml-graphics.lib" "sfml-window.lib" "sfml-system.lib" "sfml-audio.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Release\Untethered_Engine.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Release\Untethered_Engine.lib" /MACHINE:X86 /SAFESEH Release\main.obj
@@ -26,14 +37,10 @@
          Release\Animation.obj
          Release\Pawn.obj
          Release\TestEnvironment.obj
-         Generating code
-         1 of 2816 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-           0 functions were new in current compilation
-           1 functions had inline decision re-evaluated but remain unchanged
-         Finished generating code
-         Project1.vcxproj -> C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Release\Untethered_Engine.exe
-     1>Done Building Project "C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Project1\Project1.vcxproj" (Build target(s)).
+     1>TextNode.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Text::setFillColor(class sf::Color const &)" (__imp_?setFillColor@Text@sf@@QAEXABVColor@2@@Z)
+     1>C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Release\Untethered_Engine.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Project1\Project1.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.71
+Time Elapsed 00:00:03.54

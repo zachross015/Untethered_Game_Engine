@@ -46,12 +46,6 @@ class SFML_AUDIO_API SoundBufferRecorder : public SoundRecorder
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief destructor
-    ///
-    ////////////////////////////////////////////////////////////
-    ~SoundBufferRecorder();
-
-    ////////////////////////////////////////////////////////////
     /// \brief Get the sound buffer containing the captured audio data
     ///
     /// The sound buffer is valid only after the capture has ended.

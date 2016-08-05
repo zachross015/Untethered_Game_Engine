@@ -1,5 +1,6 @@
 #include <ZR/GUI/TextNode.h>
 #include <ZR/GameResources/Resources.h>
+#include <SFML/Graphics/Text.hpp>
 namespace zr
 {
 	void TextNode::setText(std::string str)
@@ -15,19 +16,20 @@ namespace zr
 			t = new sf::Text();
 
 			// Set specified font
-			if (elem->BoolAttribute("font"))
-				t->setFont(Fonts.get(elem->Attribute("font")));
+			if (elem->Attribute("font"))
+				(t->setFont(Fonts.get(elem->Attribute("font"))));
 			else
 				(t->setFont(Fonts.get("default")));
 
 			// Set specified color
-			//if (elem->BoolAttribute("color"))
-			//	t.setFillColor(sf::Color::White);
-			//else
-			//	t.setFillColor(sf::Color::White);
+			if (elem->Attribute("color"))
+				t->setColor(getColor(elem->Attribute("color")));
+			else
+				t->setColor(sf::Color::White);
+			
 
 			// Set specified size
-			if (elem->BoolAttribute("size"))
+			if (elem->Attribute("size"))
 				t->setCharacterSize(std::stoi(elem->Attribute("size")));
 			else
 				t->setCharacterSize(30);
@@ -63,9 +65,10 @@ namespace zr
 		adjustPositioning();
 	}
 
-	void TextNode::setTextColor(sf::Color c)
+	void TextNode::setColor(sf::Color c)
 	{
-		adjustPositioning();
+		for (int i = 0; i < text.size(); i++)
+			text[i]->setColor(c);
 	}
 
 	void TextNode::setHorizantalAlign(HorizantalAlign::Type h)
@@ -194,5 +197,27 @@ namespace zr
 			delete line;
 
 		}
+	}
+	sf::Color TextNode::getColor(std::string s)
+	{
+		s.erase(std::remove(s.begin(), s.end(), ' '), s.end());
+		for (int i = 0; i < s.length(); i++)
+		{
+			if (isupper(s[i]))
+				s[i] = tolower(s[i]);
+		}
+		if (s == "red") return sf::Color::Red;
+		else if (s == "blue") return sf::Color::Blue;
+		else if (s == "black") return sf::Color::Black;
+		else if (s == "green") return sf::Color::Green;
+		else if (s == "white") return sf::Color::White;
+		else if (s == "yellow") return sf::Color::Yellow;
+		else if (s == "magenta") return sf::Color::Magenta;
+		else if (s == "cyan") return sf::Color::Cyan;
+		else
+		{
+
+		}
+		return sf::Color::White;
 	}
 }

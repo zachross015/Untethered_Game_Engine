@@ -529,8 +529,7 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    TcpSocket   m_commandSocket; ///< Socket holding the control connection with the server
-    std::string m_receiveBuffer; ///< Received command data that is yet to be processed
+    TcpSocket m_commandSocket; ///< Socket holding the control connection with the server
 };
 
 } // namespace sf

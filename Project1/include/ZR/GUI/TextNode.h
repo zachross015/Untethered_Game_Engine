@@ -81,7 +81,7 @@ namespace zr
 		//
 		//
 		//
-		void setTextColor(sf::Color c);
+		void setColor(sf::Color c);
 
 		//
 		//
@@ -134,6 +134,7 @@ namespace zr
 		float lineWidth = 0;
 		void configureLines();
 		void adjustPositioning();
+		sf::Color getColor(std::string s);
 		
 		
 	};
