@@ -96,11 +96,6 @@ namespace zr
 		//
 		//
 		//
-		void setLineWrap(LineWrap::Type l);
-
-		//
-		//
-		//
 		void setSpaceSize(float size);
 
 		//
@@ -138,6 +133,13 @@ namespace zr
 		//
 		sf::Vector2f getSize();
 
+		//
+		// Function that sets base attributes of any GUINode or derived class
+		// based on passed information
+		// @param elem is a pointer to the XMLElement being read from
+		//
+		void loadFromElement(tinyxml2::XMLElement *elem);
+
 		virtual void update(sf::Time dt);
 		virtual void handleEvent(sf::Event &e);
 		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
@@ -146,13 +148,15 @@ namespace zr
 		void adjustPositioning();
 		float spaceSize = 20;
 		float lineHeight = 10;
-	private:
 		std::vector<sf::Text*> text;
+		sf::Color getColor(std::string s);
+	private:
+		
 		std::vector<Line*> lines;
 		Settings s;
 		float lineWidth = 0;
 		void configureLines();
-		sf::Color getColor(std::string s);
+		
 		
 		
 	};

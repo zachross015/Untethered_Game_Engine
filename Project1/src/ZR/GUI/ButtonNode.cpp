@@ -1,4 +1,6 @@
 #include <ZR/GUI/ButtonNode.h>
+#include <ZR/GameResources/Resources.h>
+#include <sstream>
 
 namespace zr
 {
@@ -10,13 +12,19 @@ namespace zr
 	}
 	void ButtonNode::setText(std::string str)
 	{
-		TextNode::setText(str);
-		adjustPositioning();
+		text.clear();
+		tinyxml2::XMLDocument doc;
+		tinyxml2::XMLElement *elem;
+		doc.Parse(str.c_str());
+		elem = doc.FirstChildElement("button");
+		loadFromElement(elem);
 	}
 	void ButtonNode::setPosition(sf::Vector2f f)
 	{
 		r.setPosition({ f.x, f.y + (getSpaceSize()/2) });
 		TextNode::setPosition({ f.x + padding.left, f.y + padding.top });
+		Hoverable::setPosition(f);
+		Clickable::setPosition(f);
 		adjustPositioning();
 	}
 	void ButtonNode::setScale(sf::Vector2f f)
@@ -24,6 +32,8 @@ namespace zr
 		r.setScale(f);
 		padding = { padding.left * f.x, padding.top * f.y, padding.width * f.x, padding.height * f.y };
 		TextNode::setScale(f);
+		Hoverable::setScale(f);
+		Clickable::setScale(f);
 		adjustPositioning();
 	}
 	void ButtonNode::setOrigin(sf::Vector2f f)
@@ -57,6 +67,7 @@ namespace zr
 	void ButtonNode::setLineHeight(float size)
 	{
 		TextNode::setLineHeight(size);
+		adjustPositioning();
 	}
 
 	void ButtonNode::setBackgroundColor(sf::Color c)
@@ -75,8 +86,23 @@ namespace zr
 	{
 		r.setOutlineThickness(f);
 	}
+	void ButtonNode::loadFromElement(tinyxml2::XMLElement * e)
+	{
+		TextNode::loadFromElement(e);
+		if (e->Attribute("bgcolor"))
+			setBackgroundColor(getColor(e->Attribute("bgcolor")));
+		if (e->Attribute("olcolor")) //Outline color
+			setOutlineColor(getColor(e->Attribute("olcolor")));
+		if (e->Attribute("olthk")) //Outline thickness
+			setOutlineThickness(std::stof(e->Attribute("olthk")));
+		setPosition(Transformable::getPosition());
+		setScale(Transformable::getScale());
+		setOrigin(Transformable::getOrigin());
+	}
 	void ButtonNode::update(sf::Time dt)
 	{
+		runClickFunctions();
+		runHoverFunctions();
 	}
 	void ButtonNode::handleEvent(sf::Event & e)
 	{
@@ -91,5 +117,11 @@ namespace zr
 		sf::Vector2f paddingTotal{padding.left + padding.width, padding.top + padding.height};
 		TextNode::adjustPositioning();
 		r.setSize(TextNode::getSize() + paddingTotal);
+		Hoverable::setSize(TextNode::getSize() + paddingTotal);
+		Clickable::setSize(TextNode::getSize() + paddingTotal);
+	}
+	sf::FloatRect ButtonNode::getRect(std::string str)
+	{
+		return sf::FloatRect();
 	}
 }

@@ -81,6 +81,13 @@ namespace zr
 		//
 		void setOutlineThickness(float f);
 
+		//
+		// Function that sets base attributes of any GUINode or derived class
+		// based on passed information
+		// @param elem is a pointer to the XMLElement being read from
+		//
+		void loadFromElement(tinyxml2::XMLElement *elem);
+
 		virtual void update(sf::Time dt);
 		virtual void handleEvent(sf::Event &e);
 		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
@@ -89,6 +96,7 @@ namespace zr
 	private:
 		sf::RectangleShape r;
 		sf::FloatRect padding = { 0,0,0,0 };
+		sf::FloatRect getRect(std::string);
 
 	};
 }

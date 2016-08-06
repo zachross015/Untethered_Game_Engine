@@ -4,8 +4,6 @@
 namespace zr
 {
 	Hoverable::Hoverable()
-		: width(new float())
-		, height(new float())
 	{
 
 	}
@@ -20,7 +18,7 @@ namespace zr
 	{
 		sf::Vector2i mousePos = sf::Mouse::getPosition(*Window);
 		sf::Vector2f pos = getPosition();
-		return mousePos.x > pos.x && mousePos.y > pos.y && mousePos.x < pos.x + (*width * getScale().x) && mousePos.y < pos.y + (*height * getScale().y);
+		return mousePos.x > pos.x && mousePos.y > pos.y && mousePos.x < pos.x + (width * getScale().x) && mousePos.y < pos.y + (height * getScale().y);
 	}
 
 	void Hoverable::runHoverFunctions()

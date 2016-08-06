@@ -36,7 +36,7 @@ namespace zr
         // Function that sets the bounding rectangle for the object
         // @param f is the width and height of the rectangle
         //
-		void setSize(sf::Vector2f &f) { *width = f.x; *height = f.y; }
+		void setSize(sf::Vector2f &f) { width = f.x; height = f.y; }
         
         // A function holder for all functions to be ran when this object is hovered on
 		FunctionHolder<void(*)(Hoverable*)> hoverFunctions;
@@ -46,7 +46,7 @@ namespace zr
         //
 		void runHoverFunctions();
 	protected:
-		float *width, *height;
+		float width = 0, height = 0;
 	};
 }
 

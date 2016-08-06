@@ -10,50 +10,8 @@ namespace zr
 		tinyxml2::XMLDocument doc;
 		tinyxml2::XMLElement *elem;
 		doc.Parse(str.c_str());
-		elem = doc.FirstChildElement("style");
-		sf::Text *t;
-		sf::Text *space = new sf::Text();
-		space->setString(" ");
-		space->setFont(Fonts.get("default"));
-		space->setColor(sf::Color::Black);
-		space->setCharacterSize(spaceSize);
-		while (elem)
-		{
-			std::istringstream ss(elem->GetText());
-			std::string token;
-			while (std::getline(ss, token, ' '))
-			{
-				t = new sf::Text();
-
-				// Set specified font
-				if (elem->Attribute("font"))
-					(t->setFont(Fonts.get(elem->Attribute("font"))));
-				else
-					(t->setFont(Fonts.get("default")));
-
-				// Set specified color
-				if (elem->Attribute("color"))
-					t->setColor(getColor(elem->Attribute("color")));
-				else
-					t->setColor(sf::Color::White);
-
-
-				// Set specified size
-				if (elem->Attribute("size"))
-					t->setCharacterSize(std::stoi(elem->Attribute("size")));
-				else
-					t->setCharacterSize(30);
-
-				t->setString(token);
-				text.push_back(t);
-				text.push_back(space);
-			}
-			elem = elem->NextSiblingElement("style");
-		}
-
-		adjustPositioning();
-		t = 0;
-		delete t;
+		elem = doc.FirstChildElement("text");
+		loadFromElement(elem);
 	}
 
 	void TextNode::setLineWidth(float width)
@@ -91,12 +49,6 @@ namespace zr
 	void TextNode::setVerticalAlign(VerticalAlign::Type v)
 	{
 		s.va = v;
-		adjustPositioning();
-	}
-
-	void TextNode::setLineWrap(LineWrap::Type l)
-	{
-		s.lw = l;
 		adjustPositioning();
 	}
 
@@ -148,6 +100,88 @@ namespace zr
 		for (int i = 0; i < lines.size(); i++)
 			height += lines[i]->maxSize.y + lineHeight;
 		return sf::Vector2f(lineWidth,height);
+	}
+
+	void TextNode::loadFromElement(tinyxml2::XMLElement * e)
+	{
+		if (!e) throw std::runtime_error("TextNode::loadFromElement - unable to read element. Check syntax");
+		if (e->Attribute("pos"))
+			setPosition(getCoords(e->Attribute("pos"))); //Position
+		if (e->Attribute("scale"))
+			setScale(getCoords(e->Attribute("scale"))); //Scale
+		if (e->Attribute("orig"))
+			setOrigin(getCoords(e->Attribute("orig"))); //Origin
+		if (e->Attribute("lw"))
+			setLineWidth(std::stof(e->Attribute("lw"))); //Line Width
+		if (e->Attribute("lh"))
+			setLineHeight(std::stof(e->Attribute("lh"))); //Line Height
+		if (e->Attribute("ha")) //Horizantal Alignment
+		{
+			std::string str = e->Attribute("ha");
+			if (str == "left")
+				s.ha = HorizantalAlign::Left;
+			else if (str == "middle")
+				s.ha = HorizantalAlign::Middle;
+			else if (str == "right")
+				s.ha = HorizantalAlign::Right;
+		}
+		if (e->Attribute("va")) //Vertical Alignment
+		{
+			std::string str = e->Attribute("va");
+			if (str == "top")
+				s.va = VerticalAlign::Top;
+			else if (str == "middle")
+				s.va = VerticalAlign::Middle;
+			else if (str == "bottom")
+				s.va = VerticalAlign::Bottom;
+		}
+		if (e->Attribute("ss")) //Space Size
+			setSpaceSize(std::stof(e->Attribute("ss")));
+
+		tinyxml2::XMLElement *elem = e->FirstChildElement("style");
+		sf::Text *t;
+		sf::Text *space = new sf::Text();
+		space->setString(" ");
+		space->setFont(Fonts.get("default"));
+		space->setColor(sf::Color::Black);
+		space->setCharacterSize(spaceSize);
+		while (elem)
+		{
+			std::istringstream ss(elem->GetText());
+			std::string token;
+			while (std::getline(ss, token, ' '))
+			{
+				t = new sf::Text();
+
+				// Set specified font
+				if (elem->Attribute("font"))
+					(t->setFont(Fonts.get(elem->Attribute("font"))));
+				else
+					(t->setFont(Fonts.get("default")));
+
+				// Set specified color
+				if (elem->Attribute("color"))
+					t->setColor(getColor(elem->Attribute("color")));
+				else
+					t->setColor(sf::Color::White);
+
+
+				// Set specified size
+				if (elem->Attribute("size"))
+					t->setCharacterSize(std::stoi(elem->Attribute("size")));
+				else
+					t->setCharacterSize(30);
+
+				t->setString(token);
+				text.push_back(t);
+				text.push_back(space);
+			}
+			elem = elem->NextSiblingElement("style");
+		}
+
+		adjustPositioning();
+		t = 0;
+		delete t;
 	}
 
 	void TextNode::update(sf::Time dt)
