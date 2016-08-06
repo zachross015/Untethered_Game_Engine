@@ -111,6 +111,16 @@ namespace zr
 		//
 		//
 		//
+		void setLineHeight(float size);
+
+		//
+		//
+		//
+		float getLineHeight();
+
+		//
+		//
+		//
 		void setPosition(sf::Vector2f f);
 
 		//
@@ -123,17 +133,25 @@ namespace zr
 		//
 		void setOrigin(sf::Vector2f f);
 
+		//
+		//
+		//
+		sf::Vector2f getSize();
+
 		virtual void update(sf::Time dt);
 		virtual void handleEvent(sf::Event &e);
 		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+
+	protected:
+		void adjustPositioning();
+		float spaceSize = 20;
+		float lineHeight = 10;
 	private:
 		std::vector<sf::Text*> text;
 		std::vector<Line*> lines;
 		Settings s;
-		float spaceSize = 20;
 		float lineWidth = 0;
 		void configureLines();
-		void adjustPositioning();
 		sf::Color getColor(std::string s);
 		
 		

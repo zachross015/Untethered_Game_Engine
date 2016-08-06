@@ -135,6 +135,7 @@
     <ClCompile Include="src\ZR\GameResources\Game.cpp" />
     <ClCompile Include="src\ZR\GameResources\ResourceHolder.cpp" />
     <ClCompile Include="src\ZR\GameResources\StaticResources.cpp" />
+    <ClCompile Include="src\ZR\GUI\ButtonNode.cpp" />
     <ClCompile Include="src\ZR\GUI\GUINode.cpp" />
     <ClCompile Include="src\ZR\GUI\GUIOverlay.cpp" />
     <ClCompile Include="src\ZR\GUI\TextNode.cpp" />
@@ -253,6 +254,7 @@
     <ClInclude Include="include\ZR\GameResources\Game.h" />
     <ClInclude Include="include\ZR\GameResources\ResourceHolder.h" />
     <ClInclude Include="include\ZR\GameResources\Resources.h" />
+    <ClInclude Include="include\ZR\GUI\ButtonNode.h" />
     <ClInclude Include="include\ZR\GUI\GUINode.h" />
     <ClInclude Include="include\ZR\GUI\GUIOverlay.h" />
     <ClInclude Include="include\ZR\GUI\TextNode.h" />

@@ -1,6 +1,7 @@
 #include <ZR/GUI/TextNode.h>
 #include <ZR/GameResources/Resources.h>
 #include <SFML/Graphics/Text.hpp>
+#include <sstream>
 namespace zr
 {
 	void TextNode::setText(std::string str)
@@ -11,32 +12,42 @@ namespace zr
 		doc.Parse(str.c_str());
 		elem = doc.FirstChildElement("style");
 		sf::Text *t;
+		sf::Text *space = new sf::Text();
+		space->setString(" ");
+		space->setFont(Fonts.get("default"));
+		space->setColor(sf::Color::Black);
+		space->setCharacterSize(spaceSize);
 		while (elem)
 		{
-			t = new sf::Text();
+			std::istringstream ss(elem->GetText());
+			std::string token;
+			while (std::getline(ss, token, ' '))
+			{
+				t = new sf::Text();
 
-			// Set specified font
-			if (elem->Attribute("font"))
-				(t->setFont(Fonts.get(elem->Attribute("font"))));
-			else
-				(t->setFont(Fonts.get("default")));
+				// Set specified font
+				if (elem->Attribute("font"))
+					(t->setFont(Fonts.get(elem->Attribute("font"))));
+				else
+					(t->setFont(Fonts.get("default")));
 
-			// Set specified color
-			if (elem->Attribute("color"))
-				t->setColor(getColor(elem->Attribute("color")));
-			else
-				t->setColor(sf::Color::White);
-			
+				// Set specified color
+				if (elem->Attribute("color"))
+					t->setColor(getColor(elem->Attribute("color")));
+				else
+					t->setColor(sf::Color::White);
 
-			// Set specified size
-			if (elem->Attribute("size"))
-				t->setCharacterSize(std::stoi(elem->Attribute("size")));
-			else
-				t->setCharacterSize(30);
 
-			t->setString(elem->GetText());
+				// Set specified size
+				if (elem->Attribute("size"))
+					t->setCharacterSize(std::stoi(elem->Attribute("size")));
+				else
+					t->setCharacterSize(30);
 
-			text.push_back(t);
+				t->setString(token);
+				text.push_back(t);
+				text.push_back(space);
+			}
 			elem = elem->NextSiblingElement("style");
 		}
 
@@ -92,11 +103,23 @@ namespace zr
 	void TextNode::setSpaceSize(float size)
 	{
 		spaceSize = size;
+		adjustPositioning();
 	}
 
 	float TextNode::getSpaceSize()
 	{
 		return spaceSize;
+	}
+
+	void TextNode::setLineHeight(float size)
+	{
+		lineHeight = size;
+		adjustPositioning();
+	}
+
+	float TextNode::getLineHeight()
+	{
+		return lineHeight;
 	}
 
 	void TextNode::setPosition(sf::Vector2f f)
@@ -117,6 +140,14 @@ namespace zr
 	{
 		Transformable::setOrigin(f);
 		adjustPositioning();
+	}
+
+	sf::Vector2f TextNode::getSize()
+	{
+		float height = 0;
+		for (int i = 0; i < lines.size(); i++)
+			height += lines[i]->maxSize.y + lineHeight;
+		return sf::Vector2f(lineWidth,height);
 	}
 
 	void TextNode::update(sf::Time dt)
@@ -142,6 +173,7 @@ namespace zr
 		for (int i = 0; i < text.size(); i++)
 		{
 			sf::Text *t = text[i];
+			if (t->getString() == " ") t->setCharacterSize(spaceSize);
 			if (l->maxSize.x + t->getGlobalBounds().width > (lineWidth * getScale().x))
 			{
 				lines.push_back(l);
@@ -192,7 +224,7 @@ namespace zr
 				x += t->getGlobalBounds().width;
 				t->setPosition(pos);
 			}
-			y += line->maxSize.y + spaceSize;
+			y += line->maxSize.y + lineHeight;
 			line = 0;
 			delete line;
 
@@ -216,6 +248,20 @@ namespace zr
 		else if (s == "cyan") return sf::Color::Cyan;
 		else
 		{
+			s = s.substr(s.find("("));
+			s.erase(std::remove(s.begin(), s.end(), '('), s.end());
+			s.erase(std::remove(s.begin(), s.end(), ')'), s.end());
+			std::istringstream ss(s);
+			std::string token;
+			std::vector<std::string> tokens;
+			float r, g, b, a = 255;
+			while (std::getline(ss, token, ','))
+				tokens.push_back(token);
+			r = std::stof(tokens[0]);
+			g = std::stof(tokens[1]);
+			b = std::stof(tokens[2]);
+			if (tokens.size() >= 4) a = std::stof(tokens[3]);
+			return sf::Color(r, g, b, a);
 
 		}
 		return sf::Color::White;

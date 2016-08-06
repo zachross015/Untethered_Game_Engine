@@ -25,10 +25,12 @@ namespace zr
 
 	void Hoverable::runHoverFunctions()
 	{
-
-		for (int i = 0; i < hoverFunctions.size(); i++)
+		if (isHovering())
 		{
-			hoverFunctions.get(i)(this);
+			for (int i = 0; i < hoverFunctions.size(); i++)
+			{
+				hoverFunctions.get(i)(this);
+			}
 		}
 	}
 }
