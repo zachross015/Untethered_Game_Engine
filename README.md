@@ -15,7 +15,7 @@ Game engine under the development of Zach Ross. This project is almost completel
 - [X] Add XML Parsing to the engine
 - [X] Create node system for GUI Elements
 - [X] In-depth text and NodeElement formatting via XML tags
-- [ ] Add Button Elements
+- [X] Add Button Elements
 - [ ] Add Input Elements
 - [X] Add Text Elements
 - [ ] Add RadioButton Elements
