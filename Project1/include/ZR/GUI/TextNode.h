@@ -49,6 +49,18 @@ namespace zr
 		sf::Vector2f maxSize = { 0,0 };
 	};
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// The purpose of this class is to allow for Text based GUI elements.
+	// All XML text is formatted as so : <text><style>words go</style><style>here</style></text>
+	// **any text with in the <text> tag must be surrounded by a <style> tag**
+	// GUI text attributes:
+	//    pos, scale, orig, lw, lh, ha, va
+	// GUI style attributes
+	//	  font, color, size
+	//
+	//
+	// Copyright © 2016 Zachary Ross. All rights reserved.
+	/////////////////////////////////////////////////////////////////////////////////
 	class TextNode : public GUINode
 	{
 	public:

@@ -136,6 +136,9 @@
     <ClCompile Include="src\ZR\GUI\ButtonNode.cpp">
       <Filter>Engine Items\src\ZR\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="src\ZR\GUI\TextBox.cpp">
+      <Filter>Engine Items\src\ZR\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ZR\GameResources\Game.h">
@@ -496,6 +499,9 @@
       <Filter>Engine Items\include\ZR\GUI</Filter>
     </ClInclude>
     <ClInclude Include="include\ZR\GUI\ButtonNode.h">
+      <Filter>Engine Items\include\ZR\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\GUI\TextBox.h">
       <Filter>Engine Items\include\ZR\GUI</Filter>
     </ClInclude>
   </ItemGroup>

@@ -138,6 +138,7 @@
     <ClCompile Include="src\ZR\GUI\ButtonNode.cpp" />
     <ClCompile Include="src\ZR\GUI\GUINode.cpp" />
     <ClCompile Include="src\ZR\GUI\GUIOverlay.cpp" />
+    <ClCompile Include="src\ZR\GUI\TextBox.cpp" />
     <ClCompile Include="src\ZR\GUI\TextNode.cpp" />
     <ClCompile Include="src\ZR\Mutable\Clickable.cpp" />
     <ClCompile Include="src\ZR\Mutable\Drawable.cpp" />
@@ -257,6 +258,7 @@
     <ClInclude Include="include\ZR\GUI\ButtonNode.h" />
     <ClInclude Include="include\ZR\GUI\GUINode.h" />
     <ClInclude Include="include\ZR\GUI\GUIOverlay.h" />
+    <ClInclude Include="include\ZR\GUI\TextBox.h" />
     <ClInclude Include="include\ZR\GUI\TextNode.h" />
     <ClInclude Include="include\ZR\Mutable.h" />
     <ClInclude Include="include\ZR\Mutable\Clickable.h" />

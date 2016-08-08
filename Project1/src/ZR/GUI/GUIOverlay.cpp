@@ -42,6 +42,18 @@ namespace zr
 			delete tn;
 		}
 
+		doc.PrintError();
+		e = doc.FirstChildElement("textbox");
+		while (e)
+		{
+			TextBox *tn = new TextBox();
+			tn->loadFromElement(e);
+			addNode(tn);
+			e = e->NextSiblingElement("textbox");
+			tn = 0;
+			delete tn;
+		}
+
 		e = doc.FirstChildElement("button");
 		while(e)
 		{
