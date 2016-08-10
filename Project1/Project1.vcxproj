@@ -32,7 +32,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -152,6 +152,7 @@
     <ClCompile Include="src\ZR\Sprite\Actor.cpp" />
     <ClCompile Include="src\ZR\Sprite\Animation.cpp" />
     <ClCompile Include="src\ZR\Sprite\Pawn.cpp" />
+    <ClCompile Include="src\ZR\Sprite\StaticActor.cpp" />
     <ClCompile Include="src\ZR\TestEnvironment.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -276,6 +277,7 @@
     <ClInclude Include="include\ZR\Sprite\Actor.h" />
     <ClInclude Include="include\ZR\Sprite\Animation.h" />
     <ClInclude Include="include\ZR\Sprite\Pawn.h" />
+    <ClInclude Include="include\ZR\Sprite\StaticActor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\SFML\Audio\SoundFileFactory.inl" />

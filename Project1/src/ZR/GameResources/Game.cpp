@@ -12,7 +12,6 @@ extern void Test();
 Game::Game()
 {
 	Window->setFramerateLimit(60.f);
-	loadResources();
 	Test();
 }
 
@@ -70,29 +69,3 @@ void Game::render()
     Window->display();
 }
 
-void Game::loadResources()
-{
-	std::ifstream s;
-	s.open("assets/assets.txt");
-	if (!s.fail())
-	{
-		while (!s.eof())
-		{
-			std::string type, name, path;
-			s >> type >> name >> path;
-			if (type == "Texture")
-				Textures.load(name, path);
-			else if (type == "Font")
-				Fonts.load(name, path);
-			else if (type == "Sound")
-				Sounds.load(name, path);
-			else if (type == "Animation")
-				Animations.load(name, path);
-		}
-	}
-	else
-	{
-		throw std::runtime_error("Game::loadResources - failed to open resource file");
-	}
-	s.close();
-}

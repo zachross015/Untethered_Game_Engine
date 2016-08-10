@@ -8,18 +8,31 @@
 
 namespace zr
 {
+
 	class Scene : public Drawable
 	{
 	public:
-		Scene();
+		Scene(std::string sn);
 		~Scene();
 
+		//
+		//
+		//
 		virtual void update(sf::Time deltaTime);
+
+		//
+		//
+		//
 		virtual void handleEvent(sf::Event &e);
 
-		//Adds any drawable object to the drawableObjects array to be drawn to the screen
+		//
+		//
+		//
 		virtual void addObject(sf::Drawable *);
 
+		//
+		//
+		//
 		virtual void addCollidableObject(CollisionObject *p);
 
 		//
@@ -36,10 +49,24 @@ namespace zr
 		//
 		virtual void removeFocusFromObject(Drawable *obj);
 
+		//
+		//
+		//
 		virtual void deleteObject(sf::Drawable *);
+
+		//
+		//
+		//
 		void deleteCollidableObject(CollisionObject *c);
-		//Replaces the first object with the second one
+
+		//
+		//
+		//
 		virtual void replaceObject(sf::Drawable *, sf::Drawable *);
+		
+		//
+		//
+		//
 		virtual void removeAllObjects();
 
 		//
@@ -55,7 +82,7 @@ namespace zr
 		// @param index is the index of the child for the current scene to be
 		// set to
 		//
-		void goToChildScene(int index);
+		void loadChildScene(std::string sceneName);
 
 		//
 		// Function that sets the current scene to the parent scene
@@ -63,14 +90,26 @@ namespace zr
 		//
 		void goToParentScene();
 
+		//
+		//
+		//
+		std::string getSceneName();
+
+		
+
 		GUIOverlay *GUI;
 
 
 	private:
 		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+		void loadScene();
+		void loadObject(tinyxml2::XMLElement *e);
+		sf::Vector2f getCoords(std::string s);
+		std::string name;
+		bool loaded = false;
 		Scene *parentScene;
 		QuadTree quad;
-		std::vector<Scene *> childScenes;
+		std::map<std::string, Scene *> childScenes;
 		std::vector<sf::Drawable *> objects;
 		std::vector<Drawable *> drawableObjects;
 		std::vector<Drawable *> focusedObjects;

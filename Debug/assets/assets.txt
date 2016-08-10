@@ -1,5 +1,0 @@
-BoundedAnimation X_up assets/images/X_up
-BoundedAnimation X_down assets/images/X_down
-BoundedAnimation X_one assets/images/X_one
-BoundedAnimation X_left assets/images/X_left
-Animation X_up assets/images/X_up

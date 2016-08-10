@@ -48,8 +48,11 @@ namespace zr
 
 		if (!resource->loadFromFile(aFName))
 			throw std::runtime_error("ResourceHolder::load - Failed to load " + aFName);
-		auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
-		assert(inserted.second);
+		if(mResourceMap.find(id) == mResourceMap.end())
+		{
+			auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
+			assert(inserted.second);
+		}
 	}
 
 	template <typename Resource, typename Identifier>

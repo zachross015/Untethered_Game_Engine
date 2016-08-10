@@ -4,7 +4,6 @@ namespace zr
 {
 	GUINode::GUINode()
 	{	
-
 	}
 
 	GUINode::~GUINode()

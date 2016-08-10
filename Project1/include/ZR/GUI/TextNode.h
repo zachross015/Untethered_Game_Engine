@@ -38,8 +38,8 @@ namespace zr
 
 	struct Settings
 	{
-		HorizantalAlign::Type ha;
-		VerticalAlign::Type va;
+		HorizantalAlign::Type ha = HorizantalAlign::Left;
+		VerticalAlign::Type va = VerticalAlign::Top;
 		LineWrap::Type lw;
 	};
 

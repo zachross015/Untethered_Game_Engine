@@ -8,8 +8,8 @@ sf::Music m;
 
 void Test()
 {
-	CurrentScene = new Scene();
-	GUIOverlay *gui = new GUIOverlay();
-	gui->loadFromFile("guitest.xml");
-	CurrentScene->GUI = gui;
+	CurrentScene = new Scene("awakening");
+	TextNode *tn = new TextNode();
+	tn->setText("<text va = 'middle' ha = 'middle' pos = '(800,450)'><style color = 'black'>ch.1</style><style size = '100' color = 'black'>awakening</style></text>");
+	CurrentScene->GUI->addNode(tn);
 }

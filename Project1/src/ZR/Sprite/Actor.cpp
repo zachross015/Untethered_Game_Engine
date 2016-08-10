@@ -46,7 +46,7 @@ namespace zr
 			currentAnimation->update(dT);
 			if (currentBounds)
 			{
-				CollisionObject::set(*currentBounds);
+				CollisionObject::makeCopy(*currentBounds);
 			}
 		}
 	}

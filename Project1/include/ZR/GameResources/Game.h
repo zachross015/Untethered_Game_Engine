@@ -22,7 +22,6 @@ private:
 	void    processEvents();
 	void    update(sf::Time);
 	void    render();
-	void	loadResources();
 };
 
 #endif

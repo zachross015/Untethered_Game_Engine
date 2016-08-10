@@ -232,7 +232,7 @@ namespace zr
 	void TextNode::adjustPositioning()
 	{
 		configureLines();
-		float y = 0;
+		float y = -1.5 * lineHeight;
 		for (int i = 0; i < lines.size(); i++)
 		{
 			float x = 0;
@@ -258,7 +258,9 @@ namespace zr
 				x += t->getGlobalBounds().width;
 				t->setPosition(pos);
 			}
-			y += line->maxSize.y + lineHeight;
+			if (i != lines.size() - 1)
+				y += lineHeight;
+			y += line->maxSize.y;
 			line = 0;
 			delete line;
 

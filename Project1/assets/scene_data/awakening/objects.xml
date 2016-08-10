@@ -1,0 +1,63 @@
+<object>
+	<texture>room</texture>
+	<pos>(200,-300)</pos>
+	<scale>(6,6)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>bed</texture>
+	<pos>(600,100)</pos>
+	<scale>(2,2)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>stand</texture>
+	<pos>(760,0)</pos>
+	<scale>(2,2)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>chair</texture>
+	<pos>(455,120)</pos>
+	<scale>(3,3)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>chair</texture>
+	<pos>(455,200)</pos>
+	<scale>(3,3)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>closet</texture>
+	<pos>(276,230)</pos>
+	<scale>(3,3)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>closet</texture>
+	<pos>(276,330)</pos>
+	<scale>(3,3)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>closet</texture>
+	<pos>(276,430)</pos>
+	<scale>(3,3)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>
+<object>
+	<texture>closet</texture>
+	<pos>(276,530)</pos>
+	<scale>(3,3)</scale>
+	<origin>(0,0)</origin>
+	<rotation>0</rotation>
+</object>

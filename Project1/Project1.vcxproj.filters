@@ -139,6 +139,9 @@
     <ClCompile Include="src\ZR\GUI\TextBox.cpp">
       <Filter>Engine Items\src\ZR\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="src\ZR\Sprite\StaticActor.cpp">
+      <Filter>Engine Items\src\ZR\Sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ZR\GameResources\Game.h">
@@ -503,6 +506,9 @@
     </ClInclude>
     <ClInclude Include="include\ZR\GUI\TextBox.h">
       <Filter>Engine Items\include\ZR\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZR\Sprite\StaticActor.h">
+      <Filter>Engine Items\include\ZR\Sprite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

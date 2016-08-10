@@ -137,7 +137,7 @@ namespace zr
 		setRotation(getRotation());
 	}
 
-	void CollisionObject::set(CollisionObject *other)
+	void CollisionObject::makeCopy(CollisionObject *other)
 	{
 		ComplexPolygon::polygons = other->polygons;
 		setPosition(other->getPosition());

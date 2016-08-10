@@ -125,8 +125,8 @@ namespace zr
 		bool isCollided();
 		
 		FunctionHolder<void(*)(CollisionObject*, CollisionObject*)> collisionFunctions;
-	protected:
-		void set(CollisionObject *);
+
+		void makeCopy(CollisionObject *);
 	private:
 		sf::Vector2f dir(sf::ConvexShape *, int point);
 		float dot(sf::Vector2f a, sf::Vector2f b);

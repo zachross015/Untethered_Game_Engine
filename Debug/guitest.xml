@@ -1,0 +1,3 @@
+<textbox lw = '1580' pos = '(10,700)' ha = 'middle' va = 'bottom' bgcolor = 'black' olcolor = 'white' olthk = '10' pad = '(0,40,0,60)'>
+	<style color = 'blue' size = '50'>half-brother</style><style color = 'white' size = '20'>.wav</style>
+</textbox>
