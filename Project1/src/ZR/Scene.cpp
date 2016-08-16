@@ -211,11 +211,12 @@ namespace zr
 			tinyxml2::XMLDocument doc;
 			tinyxml2::XMLElement *elem;
 			doc.LoadFile(("assets/scene_data/" + name + "/objects.xml").c_str());
-			elem = doc.FirstChildElement("object");
+			// Load static objects
+			elem = doc.FirstChildElement("s_object");
 			while (elem)
 			{
 				loadObject(elem);
-				elem = elem->NextSiblingElement("object");
+				elem = elem->NextSiblingElement("s_object");
 			}
 			
 		}
@@ -258,7 +259,6 @@ namespace zr
 			s->setOrigin(getCoords(child->GetText()));
 		if(child = e->FirstChildElement("rotation"))
 			s->setRotation(std::stof(child->GetText()));
-		s->collisionFunctions.add([](zr::CollisionObject*, zr::CollisionObject*) {std::cout << "collide" << std::endl; });
 		addObject(s);
 		addCollidableObject(s);
 		s = 0;

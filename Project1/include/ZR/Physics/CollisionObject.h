@@ -62,38 +62,38 @@ namespace zr
         //
         // Function that sets the scale of the object being displayed
         // @param s is the scale to set the object to
-        void setScale(sf::Vector2f s);
+        virtual void setScale(sf::Vector2f s);
         
         //
         // Fuction that sets the current position of the object
         // @param pos is the position to which the object will be set to
         //
-        void setPosition(sf::Vector2f pos);
+        virtual void setPosition(sf::Vector2f pos);
 
 		//
 		// Function that sets the position relative to the current position of the object
 		// @param pos is the position to be moved to
 		//
-		void move(sf::Vector2f pos);
+		virtual void move(sf::Vector2f pos);
         
         //
         // Functions that sets the origin of the object. This is used
         // for determining all translation based changes to the object
         // @param f is the coordinates to set the origin to relative to the object
         //
-        void setOrigin(sf::Vector2f f);
+        virtual void setOrigin(sf::Vector2f f);
         
         //
         // Function that set the rotation of the object
         // @param angle sets the current angle of the object
         //
-        void setRotation(float angle);
+        virtual void setRotation(float angle);
         
         //
         // Function that sets the rotation of the object relative to the current angle
         // @param angle sets the current angle of the object relative to the current angle
         //
-        void rotate(float angle);
+        virtual void rotate(float angle);
 
 		//
 		// Function that gets the rectangle encasing the complex polygon
@@ -121,8 +121,6 @@ namespace zr
         // @param v is the new coordinates for the polygon
         //
 		void setPolygonAtIndex(int index, std::vector<sf::Vector2f> v);
-
-		bool isCollided();
 		
 		FunctionHolder<void(*)(CollisionObject*, CollisionObject*)> collisionFunctions;
 

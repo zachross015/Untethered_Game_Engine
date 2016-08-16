@@ -84,32 +84,32 @@ namespace zr
 		// Function that sets the scale of the Actor's sprite being displayed
 		// @param s is the scale to set the object to
 		//
-        void setScale(sf::Vector2f s);
+        virtual void setScale(sf::Vector2f s);
 
 		//
 		// Functions that sets the origin of the Actor's sprite. This is used
 		// for determining all translation based changes to the Actor's sprite
 		// @param f is the coordinates to set the origin to relative to the sprite
 		//
-        void setOrigin(sf::Vector2f f);
+        virtual void setOrigin(sf::Vector2f f);
 
 		//
 		// Function that set the rotation of the Actor's sprite
 		// @param angle sets the current angle of the Actor's sprite
 		//
-		void setRotation(float angle);
+		virtual void setRotation(float angle);
 
 		//
 		// Function that sets the rotation of the Actor's sprite relative to the current angle
 		// @param angle sets the current angle of the Actor's sprite relative to the current angle
 		//
-		void rotate(float angle);
+		virtual void rotate(float angle);
 
 		//
 		// Fuction that sets the current position of the Actor's sprite
 		// @param pos is the position to which the Actor's sprite will be set to
 		//
-		void setPosition(sf::Vector2f pos);
+		virtual void setPosition(sf::Vector2f pos);
 
 		//
 		// Function that returns the Actor's sprite to the previous position recorded
@@ -121,7 +121,7 @@ namespace zr
 		// the current position
 		// @param pos is the position to which the Actor's sprite will be moved to
 		//
-		void move(sf::Vector2f pos);
+		virtual void move(sf::Vector2f pos);
 
 		//
 		// Function that sets the movement speed (which can be velocity or acceleration)

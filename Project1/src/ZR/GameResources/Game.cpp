@@ -12,15 +12,16 @@ extern void Test();
 Game::Game()
 {
 	Window->setFramerateLimit(60.f);
+	Window->setKeyRepeatEnabled(false);
 	Test();
 }
 
 void Game::run()
 {
+	
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
     const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
-    
     while(Window->isOpen())
     {
         processEvents();
@@ -33,6 +34,7 @@ void Game::run()
         }
         
         render();
+		
     }
 }
 

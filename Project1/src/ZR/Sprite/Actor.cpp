@@ -66,7 +66,8 @@ namespace zr
 			{
 				for (int i = 0; i < (*currentBounds)->getPolygonCount(); i++)
 				{
-					target.draw((*currentBounds)->getShape(0), states);
+					(*currentBounds)->setFillColor(sf::Color::Red);
+					target.draw((*currentBounds)->getShape(i), states);
 				}
 			}
 			#endif

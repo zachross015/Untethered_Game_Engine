@@ -22,13 +22,14 @@ Game engine under the development of Zach Ross. This project is almost completel
  - Used for single answer question
 - [ ] Add ProgressBar Elements
 
+### Scene Queue
+- [ ] Create custom scripting language for adding events to a Scene
+- The end of each event should trigger the next event in the queue
 
 ### Misc/Unsorted
 - [ ] Game Camera
 - [ ] Mac Support
 - [ ] Linux Support
-- [X] Eliminate BoundedAnimation Class and switch all functionality to Animation Class
- - ~~Add another line to Animation Text files with either 0 or 1 that is bool for whether or not the Animation has bounds~~
 - [ ] Switch all animation files to custom file format
 
 ## Credit Where It's Due
