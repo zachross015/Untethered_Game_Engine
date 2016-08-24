@@ -1,7 +1,0 @@
-Texture bed assets/images/hospital/hospital_bed.png
-Texture chair assets/images/hospital/hospital_chair.png
-Texture closet assets/images/hospital/hospital_closet.png
-Texture room assets/images/hospital/hospital_room.png
-Texture stand assets/images/hospital/hospital_stand.png
-Font default assets/fonts/8bit.ttf
-Animation X_down assets/animations/X_down

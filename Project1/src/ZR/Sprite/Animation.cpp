@@ -101,8 +101,9 @@ namespace zr
 		// Gets the name of the file
 		std::string file = filename.substr(filename.find_last_of("/") + 1);
 
-		tImg->loadFromFile(path + "/" + file + ".png");
-		doc.LoadFile((path + "/" + file + ".xml").c_str());
+		tImg->loadFromFile(path + "/" + file + ".an");       //Animation
+		doc.LoadFile((path + "/" + file + ".anif").c_str()); //Animation Information
+
 		frames = std::stoi(doc.FirstChildElement("frames")->GetText());
 		animSize.x = std::stof(doc.FirstChildElement("width")->GetText());
 		animSize.y = std::stof(doc.FirstChildElement("height")->GetText());

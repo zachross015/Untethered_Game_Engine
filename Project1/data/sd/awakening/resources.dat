@@ -1,0 +1,7 @@
+Texture bed data/im/hospital/hospital_bed.png
+Texture chair data/im/hospital/hospital_chair.png
+Texture closet data/im/hospital/hospital_closet.png
+Texture room data/im/hospital/hospital_room.png
+Texture stand data/im/hospital/hospital_stand.png
+Font default data/fo/8bit.ttf
+Animation X_down data/an/X_down

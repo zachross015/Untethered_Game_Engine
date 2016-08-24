@@ -1,4 +1,4 @@
-﻿Build started 8/15/2016 8:23:33 PM.
+﻿Build started 8/24/2016 2:57:41 PM.
      1>Project "C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Project1\Project1.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>Link:
@@ -7,4 +7,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:01.67

@@ -183,7 +183,7 @@ namespace zr
 		{
 			loaded = true;
 			std::ifstream s;
-			s.open("assets/scene_data/" + name + "/resources.txt");
+			s.open("data/sd/" + name + "/resources.dat");
 			if (!s.fail())
 			{
 				while (!s.eof())
@@ -206,11 +206,11 @@ namespace zr
 			}
 			s.close();
 			if (!GUI) GUI = new GUIOverlay();
-			GUI->loadFromFile("assets/scene_data/" + name + "/gui.xml");
+			GUI->loadFromFile("data/sd/" + name + "/gui.dat");
 
 			tinyxml2::XMLDocument doc;
 			tinyxml2::XMLElement *elem;
-			doc.LoadFile(("assets/scene_data/" + name + "/objects.xml").c_str());
+			doc.LoadFile(("data/sd/" + name + "/objects.dat").c_str());
 			// Load static objects
 			elem = doc.FirstChildElement("s_object");
 			while (elem)
