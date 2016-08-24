@@ -1,5 +1,5 @@
 # Untethered Game Engine
-Game engine under the development of Zach Ross. This project is almost completely for learning purposes, but is also intended for the help in the development in games. It uses [SFML](http://www.sfml-dev.org) as a graphics and sound engine.
+Game engine under the development of Zach Ross. It uses [SFML](http://www.sfml-dev.org) as a graphics and sound engine.
 ## todo
 ### Collision Detection
 - [X] Implement Seperate Axis Theorem
