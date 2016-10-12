@@ -39,7 +39,7 @@ namespace zr
 		void setSize(sf::Vector2f &f) { width = f.x; height = f.y; }
         
         // A function holder for all functions to be ran when this object is hovered on
-		FunctionHolder<void(*)(Hoverable*)> hoverFunctions;
+		FunctionHolder<std::function<void(Hoverable*)> > hoverFunctions;
 
         //
         // Function that runs all functions in hoverFunctions

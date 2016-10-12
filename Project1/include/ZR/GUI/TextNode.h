@@ -93,7 +93,9 @@ namespace zr
 		//
 		//
 		//
-		void setColor(sf::Color c);
+		void setTextColor(sf::Color c);
+
+		sf::Color getTextColor();
 
 		//
 		//

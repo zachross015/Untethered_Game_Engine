@@ -1,0 +1,49 @@
+ALL WORDS MUST GO INSIDE STYLE ATTRIBUTES TO BE PROPERLY PARSED
+
+Style
+<style>words go here</style>
+Style Attributes:
+font  - font  - font_name
+color - color - (r,g,b,a) OR (r,g,b) OR color_name
+size  - size  - float
+
+
+TextNode:
+<text><style>words go</style><style> here</style></text>
+TextNode GUI Style:
+pos     - position              - (x,y)
+scale   - scale                 - (x,y)
+orig    - origin                - (x,y)
+lw      - line width            - float
+lh      - line height           - float
+ha      - horizantal alignment  - left OR middle OR right
+va      - vertical alignment    - top OR middle OR bottom
+TextBox:
+<textbox><style>words go</style><style> here</style></textbox>
+TextBox GUI Style:
+pos     - position              - (x,y)
+scale   - scale                 - (x,y)
+orig    - origin                - (x,y)
+lw      - line width            - float
+lh      - line height           - float
+ha      - horizantal alignment  - left OR middle OR right
+va      - vertical alignment    - top OR middle OR bottom
+bgcolor - fill/background color - (r,g,b,a) OR (r,g,b) OR color_name
+olcolor - outline color         - (r,g,b,a) OR (r,g,b) OR color_name
+olthk   - outline thickness     - float
+pad     - padding               - (float,float,float,float)
+
+Button:
+<button><style>words go</style><style> here</style></button>
+Button GUI Style:
+pos     - position              - (x,y)
+scale   - scale                 - (x,y)
+orig    - origin                - (x,y)
+lw      - line width            - float
+lh      - line height           - float
+ha      - horizantal alignment  - left OR middle OR right
+va      - vertical alignment    - top OR middle OR bottom
+bgcolor - fill/background color - (r,g,b,a) OR (r,g,b) OR color_name 
+olcolor - outline color         - (r,g,b,a) OR (r,g,b) OR color_name
+olthk   - outline thickness     - float
+pad     - padding               - (float,float,float,float)

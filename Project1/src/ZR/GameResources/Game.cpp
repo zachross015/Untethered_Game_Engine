@@ -7,13 +7,18 @@
 //
 #include <ZR/GameResources/Game.h>
 #include <fstream>
+
+#if defined(_DEBUG) || defined(NDEBUG) || defined(DEBUG)
 extern void Test();
+#endif
 
 Game::Game()
 {
-	Window->setFramerateLimit(60.f);
+	Window->setFramerateLimit(120.f);
 	Window->setKeyRepeatEnabled(false);
+	#if defined(_DEBUG) || defined(NDEBUG) || defined(DEBUG)
 	Test();
+	#endif
 }
 
 void Game::run()
@@ -21,7 +26,8 @@ void Game::run()
 	
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
-    const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
+    const sf::Time TimePerFrame = sf::seconds(1.f/120.f);
+	update(TimePerFrame);
     while(Window->isOpen())
     {
         processEvents();

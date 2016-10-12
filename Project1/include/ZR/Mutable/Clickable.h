@@ -40,7 +40,7 @@ namespace zr
 		//
 		// FunctionHolder for functions that deal with click events
 		//
-		FunctionHolder<void(*)(Clickable*)> clickFunctions;
+		FunctionHolder<std::function<void(Clickable*)> > clickFunctions;
 	
 		//
 		// Function that runs all functions that are stored in clickFunctions

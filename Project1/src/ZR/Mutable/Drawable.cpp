@@ -16,7 +16,7 @@ namespace zr
 	{
 		for (int i = 0; i < updateFunctions.size(); i++)
 		{
-			updateFunctions.get(i)(this, dT);
+			updateFunctions.get(i)(dT);
 		}
 
 		for (int i = 0; i < delayedFunctions.size(); i++)
@@ -24,7 +24,7 @@ namespace zr
 			delayedFunctions.get(i).second += dT;
 			if (delayedFunctions.get(i).second.didReachEnd())
 			{
-				delayedFunctions.get(i).first(this, dT);
+				delayedFunctions.get(i).first(dT);
 				delayedFunctions.get(i).second = sf::Time::Zero;
 				delayedFunctions.deleteFunction(i);
 			}
@@ -35,7 +35,7 @@ namespace zr
 	{
 		for (int i = 0; i < eventFunctions.size(); i++)
 		{
-			eventFunctions.get(i)(this, e);
+			eventFunctions.get(i)(e);
 		}
 	}
 

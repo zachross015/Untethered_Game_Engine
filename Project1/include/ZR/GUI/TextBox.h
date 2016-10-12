@@ -7,8 +7,8 @@ namespace zr
 	/////////////////////////////////////////////////////////////////////////////////
 	// The purpose of this class is to allow for TextBox based GUI elements.
 	// All XML text is formatted as so : <textbox><style>words go</style><style>here</style></textbox>
-	// **any text with in the <button> tag must be surrounded by a <style> tag**
-	// GUI button attributes:
+	// **any text with in the <textbox> tag must be surrounded by a <style> tag**
+	// GUI box attributes:
 	//    pos, scale, orig, lw, lh, ha, va, bgcolor, olcolor, olthk, pad
 	// GUI style attributes
 	//	  font, color, size
@@ -70,12 +70,12 @@ namespace zr
 		//
 		//
 		//
-		void setBackgroundColor(sf::Color c);
+		void setFillColor(sf::Color c);
 
 		//
 		//
 		//
-		void setPadding(sf::FloatRect rect);
+		sf::Color getFillColor();
 
 		//
 		//
@@ -85,7 +85,27 @@ namespace zr
 		//
 		//
 		//
+		sf::Color getOutlineColor();
+
+		//
+		//
+		//
+		void setPadding(sf::FloatRect rect);
+
+		//
+		//
+		//
+		sf::FloatRect getPadding();
+
+		//
+		//
+		//
 		void setOutlineThickness(float f);
+
+		//
+		//
+		//
+		float getOutlineThickness();
 
 		//
 		// Function that sets base attributes of any GUINode or derived class

@@ -64,30 +64,49 @@ namespace zr
 		adjustPositioning();
 	}
 
-	void TextBox::setBackgroundColor(sf::Color c)
+
+	void TextBox::setFillColor(sf::Color c)
 	{
 		r.setFillColor(c);
 	}
-	void TextBox::setPadding(sf::FloatRect rect)
+	sf::Color TextBox::getFillColor()
 	{
-		padding = rect;
-		TextNode::setOrigin({ padding.left - Transformable::getOrigin().x, padding.top - Transformable::getOrigin().y});
-		adjustPositioning();
+		return r.getFillColor();
 	}
 	void TextBox::setOutlineColor(sf::Color c)
 	{
 		r.setOutlineColor(c);
 	}
+	sf::Color TextBox::getOutlineColor()
+	{
+		return r.getOutlineColor();
+	}
+	void TextBox::setPadding(sf::FloatRect rect)
+	{
+		padding = rect;
+
+		// Sets the text node origin past the padding and the normal origin
+		TextNode::setOrigin({ padding.left - Transformable::getOrigin().x, padding.top - Transformable::getOrigin().y});
+		adjustPositioning();
+	}
+	sf::FloatRect TextBox::getPadding()
+	{
+		return padding;
+	}
 	void TextBox::setOutlineThickness(float f)
 	{
 		r.setOutlineThickness(f);
+	}
+	float TextBox::getOutlineThickness()
+	{
+		return r.getOutlineThickness();
 	}
 	void TextBox::loadFromElement(tinyxml2::XMLElement * e)
 	{
 		e->GetDocument()->PrintError();
 		TextNode::loadFromElement(e);
 		if (e->Attribute("bgcolor"))
-			setBackgroundColor(getColor(e->Attribute("bgcolor")));
+			setFillColor(getColor(e->Attribute("bgcolor")));
 		if (e->Attribute("olcolor")) //Outline color
 			setOutlineColor(getColor(e->Attribute("olcolor")));
 		if (e->Attribute("olthk")) //Outline thickness

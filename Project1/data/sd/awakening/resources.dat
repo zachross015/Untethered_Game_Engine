@@ -4,4 +4,9 @@ Texture closet data/im/hospital/hospital_closet.png
 Texture room data/im/hospital/hospital_room.png
 Texture stand data/im/hospital/hospital_stand.png
 Font default data/fo/8bit.ttf
+Font distorted data/fo/Blacklisted.ttf
 Animation X_down data/an/X_down
+Animation ddown data/an/hospital/doctor_down
+Animation dup data/an/hospital/doctor_up
+Animation dleft data/an/hospital/doctor_left
+Animation dright data/an/hospital/doctor_right

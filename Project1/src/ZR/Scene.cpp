@@ -23,6 +23,7 @@ namespace zr
 
 	void Scene::update(sf::Time deltaTime)
 	{
+		Drawable::update(deltaTime);
 		if (focusedObjects.empty())
 			for (int i = 0; i < drawableObjects.size(); i++)
 				drawableObjects[i]->update(deltaTime);
@@ -62,6 +63,7 @@ namespace zr
 
 	void Scene::handleEvent(sf::Event &e)
 	{
+		Drawable::handleEvent(e);
 		if (focusedObjects.empty())
 			for (int i = 0; i < drawableObjects.size(); i++)
 				drawableObjects[i]->handleEvent(e);

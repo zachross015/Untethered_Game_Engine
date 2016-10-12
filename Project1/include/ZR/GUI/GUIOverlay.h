@@ -19,6 +19,12 @@ namespace zr
 		void addNode(GUINode *g);
 
 		//
+		// Function that removes a node from the list of nodes being used
+		// @param g is a pointer to the GUINode to be removed
+		//
+		void removeNode(GUINode *g);
+
+		//
 		// Function that loads a GUIOverlay from an XML file
 		// parses the file and creates elements used in the GUI
 		// @param filename is the name of the file to load from

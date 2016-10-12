@@ -1,6 +1,6 @@
 <s_object>
 	<texture>room</texture>
-	<pos>(200,-300)</pos>
+	<pos>(0,-300)</pos>
 	<scale>(6,6)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
@@ -8,7 +8,7 @@
 </s_object>
 <s_object>
 	<texture>bed</texture>
-	<pos>(600,100)</pos>
+	<pos>(500,100)</pos>
 	<scale>(2,2)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
@@ -18,49 +18,49 @@
 </s_object>
 <s_object>
 	<texture>stand</texture>
-	<pos>(760,0)</pos>
+	<pos>(660,0)</pos>
 	<scale>(2,2)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
 </s_object>
 <s_object>
 	<texture>chair</texture>
-	<pos>(455,120)</pos>
+	<pos>(355,120)</pos>
 	<scale>(3,3)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
 </s_object>
 <s_object>
 	<texture>chair</texture>
-	<pos>(455,200)</pos>
+	<pos>(355,200)</pos>
 	<scale>(3,3)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
 </s_object>
 <s_object>
 	<texture>closet</texture>
-	<pos>(276,230)</pos>
+	<pos>(76,230)</pos>
 	<scale>(3,3)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
 </s_object>
 <s_object>
 	<texture>closet</texture>
-	<pos>(276,330)</pos>
+	<pos>(76,330)</pos>
 	<scale>(3,3)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
 </s_object>
 <s_object>
 	<texture>closet</texture>
-	<pos>(276,430)</pos>
+	<pos>(76,430)</pos>
 	<scale>(3,3)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>
 </s_object>
 <s_object>
 	<texture>closet</texture>
-	<pos>(276,530)</pos>
+	<pos>(76,530)</pos>
 	<scale>(3,3)</scale>
 	<origin>(0,0)</origin>
 	<rotation>0</rotation>

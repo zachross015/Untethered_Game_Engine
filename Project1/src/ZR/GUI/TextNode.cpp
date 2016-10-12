@@ -34,7 +34,7 @@ namespace zr
 		adjustPositioning();
 	}
 
-	void TextNode::setColor(sf::Color c)
+	void TextNode::setTextColor(sf::Color c)
 	{
 		for (int i = 0; i < text.size(); i++)
 			text[i]->setColor(c);
@@ -96,7 +96,7 @@ namespace zr
 
 	sf::Vector2f TextNode::getSize()
 	{
-		float height = 0;
+		float height = -lineHeight;
 		for (int i = 0; i < lines.size(); i++)
 			height += lines[i]->maxSize.y + lineHeight;
 		return sf::Vector2f(lineWidth,height);
@@ -186,10 +186,12 @@ namespace zr
 
 	void TextNode::update(sf::Time dt)
 	{
+		Drawable::update(dt);
 	}
 
 	void TextNode::handleEvent(sf::Event & e)
 	{
+		Drawable::handleEvent(e);
 	}
 
 	void TextNode::draw(sf::RenderTarget & target, sf::RenderStates states) const
@@ -232,7 +234,7 @@ namespace zr
 	void TextNode::adjustPositioning()
 	{
 		configureLines();
-		float y = -1.5 * lineHeight;
+		float y = 0;
 		for (int i = 0; i < lines.size(); i++)
 		{
 			float x = 0;
@@ -242,12 +244,12 @@ namespace zr
 				sf::Vector2f pos = {x+Transformable::getPosition().x,y+Transformable::getPosition().y};
 				sf::Text *t = line->groups[j];
 
-				if (s.va == VerticalAlign::Top)
-					pos.y += (line->maxSize.y - t->getGlobalBounds().height) / 2;
-				else if(s.va == VerticalAlign::Middle)
-					pos.y += line->maxSize.y - t->getGlobalBounds().height;
-				else if(s.va == VerticalAlign::Bottom)
-					pos.y += (line->maxSize.y - t->getGlobalBounds().height) * 1.5;
+				//if (s.va == VerticalAlign::Top)
+				//pos.y += line->maxSize.y - t->getGlobalBounds().height;
+				//else if(s.va == VerticalAlign::Middle)
+					//pos.y += (line->maxSize.y );
+				//else if(s.va == VerticalAlign::Bottom)
+					//pos.y += (line->maxSize.y - t->getGlobalBounds().height) * 1.5;
 
 				
 				if (s.ha == HorizantalAlign::Middle)

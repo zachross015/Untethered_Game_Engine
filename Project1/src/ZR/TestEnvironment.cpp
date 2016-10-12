@@ -11,43 +11,66 @@ void Test()
 	CurrentScene = new Scene("awakening");
 
 	Actor *a = new Actor();
-	sf::Vector2f pos;
 	float scale;
-	pos.x = rand() % 1600;
-	pos.y = rand() % 900;
-	scale = 4;
-	a->addAnimation("down", &Animations.get("X_down"));
+	scale = 6;
+	a->addAnimation("down", &Animations.get("ddown"));
+	a->addAnimation("up", &Animations.get("dup"));
+	a->addAnimation("left", &Animations.get("dleft"));
+	a->addAnimation("right", &Animations.get("dright"));
 	a->setCurrentAnimation("down");
-	//a->setPosition(pos);
+	a->setPosition({1700,500});
 	a->setScale({ scale, scale });
 	a->setMovementType(zr::Movement::ConstVel);
 
-	a->updateFunctions.add([](zr::Drawable *d, sf::Time)
+	a->updateFunctions.add([a](sf::Time)
 	{
-		if (Actor *b = dynamic_cast<Actor*>(d))
+		sf::Vector2f movement {0,0};
+		float speed = 400;
+		std::string animName = "";
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
-			sf::Vector2f movement {0,0};
-			float speed = 400;
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) movement.x -= speed;
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) movement.x += speed;
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) movement.y -= speed;
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) movement.y += speed;
-			b->setMovementSpeed(movement);
+			movement.x -= speed;
+			animName = "left";
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			movement.x += speed;
+			animName = "right";
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			movement.y -= speed;
+			animName = "up";
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			movement.y += speed;
+			animName = "down";
+		}
+		a->setMovementSpeed(movement);
+		if (animName != "")
+			a->setCurrentAnimation(animName);
 	});
 
-	a->collisionFunctions.add([](CollisionObject *c, CollisionObject *) 
+	a->eventFunctions.add([a](sf::Event &e) 
 	{
-		if (Actor *a = dynamic_cast<Actor*>(c))
-		{
+		if (e.type == sf::Event::KeyReleased)
+			a->getCurrentAnimation()->stop();
+		if (e.type == sf::Event::KeyPressed)
+			a->getCurrentAnimation()->play();
+	});
+
+	a->collisionFunctions.add([a](CollisionObject *c, CollisionObject *) 
+	{
 			a->goToPreviousPosition();
 			a->setMovementSpeed({ 0,0 });
-		}
 	});
 
-	CurrentScene->addObject(a);
+	zr::TextBox *tb = new zr::TextBox();
+	std::string text = "Hello my name is </style><style size = '100' font = 'distorted'>billy joe</style><style> and </style><style size = '40'>i am pc</style><style> and extremely triggered and outraged by the fact that women dont get to decide whether or not they want to be alive and working and asdf yeada";
+	tb->setSpaceSize(20);
+	tb->setText("<textbox pos = '(5,700)' lw = '1590' va = 'middle' ha = 'middle' bgcolor = 'black' olcolor = 'white' olthk = '0'><style>" + text + "</style></textbox>");
+	CurrentScene->GUI->addNode(tb);
 
-	TextNode *tn = new TextNode();
-	tn->setText("<text va = 'middle' ha = 'middle' pos = '(800,450)'><style color = 'black'>ch.1</style><style size = '100' color = 'black'>"+CurrentScene->getSceneName()+"</style></text>");
-	CurrentScene->GUI->addNode(tn);
+	CurrentScene->addObject(a);
 }

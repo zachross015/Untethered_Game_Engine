@@ -28,6 +28,11 @@ namespace zr
 		Time end;
 
 		//
+		// Starts the counter over
+		//
+		void reset() { *this -= end; };
+
+		//
 		// Function for determining if the timer did reach
 		// the end
 		// @result returns if the timer reached the end

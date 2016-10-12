@@ -55,17 +55,17 @@ namespace zr
 		//
 		// FunctionHolder for all functions that require an event to occure
 		//
-		FunctionHolder<void(*)(Drawable*, sf::Event)> eventFunctions;
+		FunctionHolder<std::function<void(sf::Event)> > eventFunctions;
 		
 		//
 		// FunctionHolder for all functions that should be updated every frame
 		//
-		FunctionHolder<void(*)(Drawable*, sf::Time)> updateFunctions;
+		FunctionHolder<std::function<void(sf::Time)> > updateFunctions;
 
 		//
 		// FunctionHolder for functions that will occur after a set amount of time
 		//
-		FunctionHolder < std::pair<void(*)(Drawable*, sf::Time), Counter>> delayedFunctions;
+		FunctionHolder <std::pair<void(*)(sf::Time), Counter >> delayedFunctions;
 
 	};
 }

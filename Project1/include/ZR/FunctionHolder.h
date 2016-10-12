@@ -1,6 +1,7 @@
 #ifndef FUNCTIONHOLDER_H
 #define FUNCTIONHOLDER_H
 #include <vector>
+#include <functional>
 /////////////////////////////////////////////////////////////////////////////////
 // The purpose of this class is to provide a template class for all
 // vectors of functions to be ran

@@ -61,16 +61,6 @@ namespace zr
 		if (currentAnimation)
 		{
 			target.draw(*currentAnimation, states);
-			#if defined(_DEBUG) || defined(NDEBUG) || defined(DEBUG)
-			if (currentBounds)
-			{
-				for (int i = 0; i < (*currentBounds)->getPolygonCount(); i++)
-				{
-					(*currentBounds)->setFillColor(sf::Color::Red);
-					target.draw((*currentBounds)->getShape(i), states);
-				}
-			}
-			#endif
 		}
 	}
 

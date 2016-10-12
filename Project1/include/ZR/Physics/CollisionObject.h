@@ -122,7 +122,7 @@ namespace zr
         //
 		void setPolygonAtIndex(int index, std::vector<sf::Vector2f> v);
 		
-		FunctionHolder<void(*)(CollisionObject*, CollisionObject*)> collisionFunctions;
+		FunctionHolder<std::function<void(CollisionObject*, CollisionObject*)> > collisionFunctions;
 
 		void makeCopy(CollisionObject *);
 	private:
