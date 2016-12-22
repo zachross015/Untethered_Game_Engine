@@ -173,7 +173,7 @@ namespace zr
 		CollisionObject **currentBounds;
 		bool collision = false;
 		bool animationIsBounded = false;
-		Movement::Type type = Movement::ConstAccl;
+		Movement::Type type = Movement::ConstVel;
         sf::Vector2f previousPos = { 0,0 };
 	};
 }

@@ -69,6 +69,8 @@ namespace zr
 		if (anim->hasBounds())
 			anim->resetPolygon();
 		animations.insert(std::pair<std::string, Animation *>(identifier, new Animation(*anim)));
+		if (!currentAnimation)
+			setCurrentAnimation(identifier);
 	}
 
 	void Actor::setCurrentAnimation(std::string s)

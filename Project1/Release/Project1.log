@@ -1,21 +1,10 @@
-﻿Build started 10/11/2016 10:09:16 PM.
+﻿Build started 12/18/2016 2:29:15 PM.
      1>Project "C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\Project1\Project1.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\\Project1\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\Untethered_Engine.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp src\ZR\GameResources\Game.cpp src\ZR\GameResources\ResourceHolder.cpp src\ZR\GameResources\StaticResources.cpp src\ZR\GUI\ButtonNode.cpp src\ZR\GUI\GUINode.cpp src\ZR\GUI\GUIOverlay.cpp src\ZR\GUI\TextBox.cpp src\ZR\GUI\TextNode.cpp src\ZR\Mutable\Clickable.cpp src\ZR\Mutable\Drawable.cpp src\ZR\Mutable\Hoverable.cpp src\ZR\Scene.cpp src\ZR\Sprite\Actor.cpp src\ZR\Sprite\Animation.cpp src\ZR\Sprite\Pawn.cpp src\ZR\Sprite\StaticActor.cpp src\ZR\TestEnvironment.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Zach\Dropbox\Game Engine\Game Engine\Untethered_Game_Engine\\Project1\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\Untethered_Engine.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp src\ZR\GUI\ButtonNode.cpp src\ZR\GUI\TextNode.cpp src\ZR\GameResources\Game.cpp src\ZR\Mutable\Clickable.cpp src\ZR\Mutable\Hoverable.cpp src\ZR\Scene.cpp src\ZR\Sprite\Actor.cpp src\ZR\Sprite\Pawn.cpp src\ZR\Sprite\StaticActor.cpp src\ZR\TestEnvironment.cpp
          main.cpp
-         Game.cpp
-     1>src\ZR\GameResources\Game.cpp(17): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-         ResourceHolder.cpp
-         StaticResources.cpp
          ButtonNode.cpp
-         GUINode.cpp
-     1>src\ZR\GUI\GUINode.cpp(18): warning C4018: '<': signed/unsigned mismatch
-         GUIOverlay.cpp
-     1>src\ZR\GUI\GUIOverlay.cpp(29): warning C4018: '<': signed/unsigned mismatch
-     1>src\ZR\GUI\GUIOverlay.cpp(78): warning C4018: '<': signed/unsigned mismatch
-     1>src\ZR\GUI\GUIOverlay.cpp(84): warning C4018: '<': signed/unsigned mismatch
-         TextBox.cpp
          TextNode.cpp
      1>src\ZR\GUI\TextNode.cpp(25): warning C4018: '<': signed/unsigned mismatch
      1>src\ZR\GUI\TextNode.cpp(32): warning C4018: '<': signed/unsigned mismatch
@@ -31,12 +20,10 @@
      1>src\ZR\GUI\TextNode.cpp(242): warning C4018: '<': signed/unsigned mismatch
      1>src\ZR\GUI\TextNode.cpp(274): warning C4018: '<': signed/unsigned mismatch
      1>src\ZR\GUI\TextNode.cpp(302): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+         Game.cpp
+     1>src\ZR\GameResources\Game.cpp(17): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
          Clickable.cpp
      1>src\ZR\Mutable\Clickable.cpp(28): warning C4018: '<': signed/unsigned mismatch
-         Drawable.cpp
-     1>src\ZR\Mutable\Drawable.cpp(17): warning C4018: '<': signed/unsigned mismatch
-     1>src\ZR\Mutable\Drawable.cpp(22): warning C4018: '<': signed/unsigned mismatch
-     1>src\ZR\Mutable\Drawable.cpp(36): warning C4018: '<': signed/unsigned mismatch
          Hoverable.cpp
      1>src\ZR\Mutable\Hoverable.cpp(28): warning C4018: '<': signed/unsigned mismatch
          Scene.cpp
@@ -51,9 +38,6 @@
      1>src\ZR\Scene.cpp(170): warning C4018: '<': signed/unsigned mismatch
      1>src\ZR\Scene.cpp(274): warning C4018: '<': signed/unsigned mismatch
          Actor.cpp
-         Animation.cpp
-     1>src\ZR\Sprite\Animation.cpp(13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>src\ZR\Sprite\Animation.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
          Pawn.cpp
          StaticActor.cpp
          TestEnvironment.cpp
@@ -87,4 +71,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:20.36
+Time Elapsed 00:00:07.04

@@ -71,6 +71,7 @@ void Test()
 	tb->setSpaceSize(20);
 	tb->setText("<textbox pos = '(5,700)' lw = '1590' va = 'middle' ha = 'middle' bgcolor = 'black' olcolor = 'white' olthk = '0'><style>" + text + "</style></textbox>");
 	CurrentScene->GUI->addNode(tb);
+	CurrentScene->GUI->removeNode(tb);
 
 	CurrentScene->addObject(a);
 }

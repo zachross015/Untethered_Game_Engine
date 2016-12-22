@@ -21,7 +21,7 @@ namespace zr
 
 	void GUIOverlay::removeNode(GUINode * g)
 	{
-		guiElements.erase(std::find(guiElements.begin(), guiElements.end(), g));
+		guiElements.erase(std::remove(guiElements.begin(), guiElements.end(), g), guiElements.end());
 	}
 	
 	void GUIOverlay::draw(sf::RenderTarget &targets, sf::RenderStates states) const
