@@ -2,4 +2,17 @@
 <width>25</width>
 <height>32</height>
 <speed>100</speed>
-<collision_data></collision_data>
+<collision_data>
+	<frame>
+		<polygon>0 0 0 16 1 16 1 0</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 0 16 1 16 1 0</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 0 16 1 16 1 0</polygon>
+	</frame>
+	<frame>
+		<polygon>0 0 0 16 1 16 1 0</polygon>
+	</frame>
+</collision_data>

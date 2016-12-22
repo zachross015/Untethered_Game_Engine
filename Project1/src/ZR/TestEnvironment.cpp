@@ -47,8 +47,9 @@ void Test()
 			movement.y += speed;
 			animName = "down";
 		}
+		sf::Vector2f s = a->getMovementSpeed();
 		a->setMovementSpeed(movement);
-		if (animName != "")
+		if (animName != "" && s != movement)
 			a->setCurrentAnimation(animName);
 	});
 
@@ -64,14 +65,19 @@ void Test()
 	{
 			a->goToPreviousPosition();
 			a->setMovementSpeed({ 0,0 });
+			std::cout << "Collisions" << std::endl;
 	});
 
-	zr::TextBox *tb = new zr::TextBox();
-	std::string text = "Hello my name is </style><style size = '100' font = 'distorted'>billy joe</style><style> and </style><style size = '40'>i am pc</style><style> and extremely triggered and outraged by the fact that women dont get to decide whether or not they want to be alive and working and asdf yeada";
-	tb->setSpaceSize(20);
-	tb->setText("<textbox pos = '(5,700)' lw = '1590' va = 'middle' ha = 'middle' bgcolor = 'black' olcolor = 'white' olthk = '0'><style>" + text + "</style></textbox>");
-	CurrentScene->GUI->addNode(tb);
-	CurrentScene->GUI->removeNode(tb);
+	CollisionObject *c = new CollisionObject();
+	c->setPosition({ 0,0 });
+	c->addPolygon({ {0,0},{1,0}, {1,16}, {0,16 } });
+	c->setScale({ 64,64	 });
+	CurrentScene->addCollidableObject(c);
+	c->collisionFunctions.add([](CollisionObject *, CollisionObject *)
+	{
+		std::cout << "Collisions" << std::endl;
+	});
+
 
 	CurrentScene->addObject(a);
 }

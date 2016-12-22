@@ -11,7 +11,6 @@ namespace zr
 
 	CollisionObject::CollisionObject()
 	{
-
 	}
 
 
@@ -27,6 +26,7 @@ namespace zr
 
 	CollisionObject::~CollisionObject()
 	{
+		ComplexPolygon::~ComplexPolygon();
 	}
 
 	bool CollisionObject::simpleCollision(CollisionObject *x)

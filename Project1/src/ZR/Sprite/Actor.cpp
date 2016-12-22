@@ -12,7 +12,6 @@ namespace zr
 	: CollisionObject()
 	, currentBounds(new CollisionObject*[1])
 	{
-
 	}
 
 
@@ -46,7 +45,8 @@ namespace zr
 			currentAnimation->update(dT);
 			if (currentBounds)
 			{
-				CollisionObject::makeCopy(*currentBounds);
+				if(*currentBounds)
+					CollisionObject::makeCopy(*currentBounds);
 			}
 		}
 	}
@@ -75,6 +75,7 @@ namespace zr
 
 	void Actor::setCurrentAnimation(std::string s)
 	{
+		CurrentScene->deleteCollidableObject(this);
 		currentAnimation = animations[s];
 		currentAnimation->play();
 
@@ -82,9 +83,11 @@ namespace zr
 		{
 			*currentBounds = currentAnimation->getCurrentPolygon();
 			CurrentScene->addCollidableObject(this);
-		}	
-		else currentBounds = 0;
-		
+		}
+		else
+		{
+			*currentBounds = nullptr;
+		}
 	}
 
 	void Actor::setScale(sf::Vector2f f)

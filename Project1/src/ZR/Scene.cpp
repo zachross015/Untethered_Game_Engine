@@ -87,8 +87,7 @@ namespace zr
 
 	void Scene::addCollidableObject(CollisionObject *p)
 	{
-		//if (find(collidableObjects.begin(), collidableObjects.end(), p) == collidableObjects.end())
-			collidableObjects.push_back(p);
+		collidableObjects.push_back(p);
 	}
 
 	void Scene::addFocusedObject(Drawable * obj)
@@ -117,11 +116,7 @@ namespace zr
 
 	void Scene::deleteCollidableObject(CollisionObject *c)
 	{
-		auto i = std::find(collidableObjects.begin(), collidableObjects.end(), c);
-		if (i != collidableObjects.end())
-		{
-			collidableObjects.erase(i);
-		}
+		collidableObjects.erase(std::remove(collidableObjects.begin(), collidableObjects.end(), c), collidableObjects.end());
 	}
 
 	void Scene::replaceObject(sf::Drawable *c, sf::Drawable *t)

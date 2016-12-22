@@ -10,6 +10,7 @@ namespace zr
 
 	ComplexPolygon::~ComplexPolygon()
 	{
+		polygons.clear();
 	}
 
 	sf::FloatRect ComplexPolygon::getLocalBounds()
@@ -31,11 +32,14 @@ namespace zr
 	{
 		sf::FloatRect temp = getLocalBounds();
 
-		temp.width *= polygons[0].getScale().x;
-		temp.height *= polygons[0].getScale().y;
+		if (polygons.size() > 0)
+		{
+			temp.width *= polygons[0].getScale().x;
+			temp.height *= polygons[0].getScale().y;
 
-		temp.left += polygons[0].getPosition().x;
-		temp.top += polygons[0].getPosition().y;
+			temp.left += polygons[0].getPosition().x;
+			temp.top += polygons[0].getPosition().y;
+		}
 		
 		return temp;
 	}

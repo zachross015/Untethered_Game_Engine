@@ -9,6 +9,7 @@ namespace zr
 	Animation::Animation()
 		:tImg(new sf::Texture())
 		, s(*tImg)
+		, polygonBounds()
 	{
 		s.setTextureRect(sf::IntRect(currentIndex * animSize.x, 0, animSize.x, animSize.y));
 		speed = 1000;
@@ -56,7 +57,7 @@ namespace zr
 			if (counter > speed) 
 			{ 
 				currentIndex++; 
-				if (currentIndex == getFrameCount())
+				if (currentIndex == getFrameCount() - 1)
 				{
 					currentIndex = 0;
 					animationFinished = true;
@@ -77,7 +78,6 @@ namespace zr
                 currentPolygon->setOrigin(s.getOrigin());
                 currentPolygon->setScale(s.getScale());
             }
-            
         }
 	}
 
@@ -110,11 +110,13 @@ namespace zr
 		speed = std::stoi(doc.FirstChildElement("speed")->GetText());
 		tinyxml2::XMLElement *elem = doc.FirstChildElement("collision_data");
 		tinyxml2::XMLElement *e2 = elem->FirstChildElement("frame");
+		
 		while (e2)
 		{
 			tinyxml2::XMLElement *e3 = e2->FirstChildElement("polygon");
-			PhysicsObject obj;
+			CollisionObject obj;
 			std::vector<sf::Vector2f> points;
+			
 			while (e3) //Prevents the loop from occurring in the case that the first input is has no polygon
 			{
 				std::istringstream iss(e3->GetText());
@@ -131,9 +133,11 @@ namespace zr
 				points.clear();
 				e3 = e3->NextSiblingElement("polygon");
 			}
+			
 			addAnimationBounds(obj);
 			e2 = e2->NextSiblingElement("frame");
 		}
+		
 		return true;
 	}
 
@@ -158,6 +162,11 @@ namespace zr
     {
         polygonBounds = vp;
     }
+
+	CollisionObject * Animation::getCurrentPolygon()
+	{
+		return currentPolygon;
+	}
     
     bool Animation::hasBounds()
     {

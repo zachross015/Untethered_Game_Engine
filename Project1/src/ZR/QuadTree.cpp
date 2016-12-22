@@ -14,18 +14,22 @@ namespace zr
 	QuadTree::~QuadTree()
 	{
 	}
+
 	void QuadTree::clear()
 	{
+		
 		objects.clear();
+		
 		for (int i = 0; i < nodes.size(); i++)
 		{
 			if (nodes[i] != nullptr)
 			{
 				nodes[i]->clear();
 				delete nodes[i];
-				nodes[i] = 0;
+				nodes[i] = nullptr;
 			}
 		}
+		
 	}
 	void QuadTree::split()
 	{
@@ -34,6 +38,7 @@ namespace zr
 		int x = bounds.left;
 		int y = bounds.top;
 
+		
 		nodes[0] = new QuadTree(level + 1, sf::FloatRect(x + subWidth, y, subWidth, subHeight));
 		nodes[1] = new QuadTree(level + 1, sf::FloatRect(x, y, subWidth, subHeight));
 		nodes[2] = new QuadTree(level + 1, sf::FloatRect(x, y + subHeight, subWidth, subHeight));
@@ -63,6 +68,7 @@ namespace zr
 	}
 	void QuadTree::insert(CollisionObject *c)
 	{
+		
 		if (nodes[0] != nullptr)
 		{
 			int index = getIndex(c);
@@ -70,24 +76,31 @@ namespace zr
 				nodes[index]->insert(c);
 		}
 		objects.push_back(c);
-
+		
 		if (objects.size() > MAX_OBJECTS && level < MAX_LEVELS)
 		{
+			
 			if (nodes[0] == nullptr)
 				split();
+			
 			int i = 0;
 			while (i < objects.size())
 			{
+				
 				int index = getIndex(objects[i]);
 				if (index != -1)
 				{
 					nodes[index]->insert(objects[i]);
 					objects.erase(objects.begin() + i);
 				}
+
 				else i++;
+				
 			}
+			
 
 		}
+		
 	}
 	std::vector<CollisionObject*> QuadTree::retrieve(std::vector<CollisionObject *> &vc, CollisionObject *c)
 	{

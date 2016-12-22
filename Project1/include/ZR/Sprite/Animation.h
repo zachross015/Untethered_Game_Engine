@@ -223,7 +223,7 @@ namespace zr
         // Function that returns a pointer to the current PhysicsObject Being Used
         // @result returns a pointer to the current polygon
         //
-        CollisionObject* getCurrentPolygon() { return currentPolygon; }
+		CollisionObject* getCurrentPolygon();
         
         //
         // Function that returns a reference of the vector of polygons
